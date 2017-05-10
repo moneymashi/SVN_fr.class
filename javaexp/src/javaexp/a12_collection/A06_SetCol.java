@@ -25,6 +25,7 @@ public class A06_SetCol {
 			elem=iter.next(); //  단위 객체를 가져옮
 			System.out.println(elem);
 		}
+
 		
 		
 	
