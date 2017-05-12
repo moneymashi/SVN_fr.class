@@ -49,21 +49,9 @@ public class A03_QueBankDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally{
-			try {
-				if(rs!=null){
-					rs.close();
-				}
-				if(pstmt!=null){
-					pstmt.close();
-				}	
-				if(con!=null){
-					con.close();
-				}				
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}			
-			
+			try {if(rs!=null)rs.close();} catch (SQLException e) {e.printStackTrace();}
+			try {if(pstmt!=null)pstmt.close();} catch (SQLException e) {e.printStackTrace();}
+			try {if(con!=null)con.close();} catch (SQLException e) {e.printStackTrace();}			
 		}
 		
 		

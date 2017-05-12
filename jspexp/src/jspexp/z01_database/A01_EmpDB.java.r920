@@ -1,6 +1,6 @@
 package jspexp.z01_database;
 
-import java.sql.Connection; 
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -102,13 +102,6 @@ public class A01_EmpDB {
 		return list;
 	}
 	// 검색 메서드
-	// input(Person p){
-	//   
-	//}
-	// 메인 메서드
-	// Person p = new Person();
-	// p.name="홍길동"
-	// input(p)
 	public ArrayList<Emp> search(Emp sch){
 		ArrayList<Emp> list = new ArrayList<Emp>();
 		try {
@@ -167,7 +160,7 @@ public class A01_EmpDB {
 			setConn();
 
 			String sql="SELECT * \n"
-					+ "FROM EMP  \n" 
+					+ "FROM EMP  \n"
 					+ "WHERE ENAME LIKE '%' || ? || '%'  \n"
 					+ "AND JOB LIKE '%'||?||'%' ";
 			System.out.println(sql);
@@ -216,81 +209,12 @@ public class A01_EmpDB {
 		}
 		return list;
 	}
-	// 입력메서드 만들기..
-	public void insertEmp(Emp ins){
-		// db 연결처리..
-		try {
-			con=A00_DB.conn();
-			String sql="INSERT INTO EMP VALUES( EMP_SEQ.NEXTVAL,"
-					+ "?,?,?,SYSDATE,?,?,?)";
-			/* COMMIT
-			 autocommit 옵션을 false사용하여 commit하지 하지 않으면 
-			 트랜잭션 확정 처리되지 않도록 한다. setAutoCommit(false) 
-			 * */
-			con.setAutoCommit(false);
-			pstmt=con.prepareStatement(sql);	
-			pstmt.setString(1, ins.getEname());
-			pstmt.setString(2, ins.getJob());
-			pstmt.setInt(3, ins.getMgr());
-			pstmt.setDouble(4, ins.getSal());
-			pstmt.setDouble(5, ins.getComm());
-			pstmt.setInt(6, ins.getDeptno());
-			pstmt.executeUpdate();
-			// 정상적으로 처리 되었을 때, commit
-			con.commit();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			// 등록시, 예외 발생으로 전체 데이터 입력 취소
-			try {
-				con.rollback();
-			} catch (SQLException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-		}finally{
-			try {
-				pstmt.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			try {
-				con.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		
-	}
+	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		A01_EmpDB db = new A01_EmpDB();
-<<<<<<< .mine
-		/*System.out.println(db.empList().size());
-||||||| .r920
 		System.out.println(db.empList().size());
-=======
-		// 입력할 내용 DTO
-		Emp dto= new Emp();
-		dto.setEname("설현");
-		dto.setJob("연예인");
-		dto.setMgr(7839);
-		dto.setSal(9999);
-		dto.setComm(999);
-		dto.setDeptno(40);
-		db.insertEmp(dto); // 데이터 입력처리.
-		
-		
-		
-		
-		System.out.println(db.empList().size());
->>>>>>> .r925
 		for(Emp emp:db.empList()){
 			System.out.print(emp.getEmpno()+"\t");
 			System.out.print(emp.getEname()+"\t");
@@ -300,12 +224,11 @@ public class A01_EmpDB {
 			System.out.print(emp.getSal()+"\t");
 			System.out.print(emp.getComm()+"\t");
 			System.out.print(emp.getDeptno()+"\n");
-		}*/
-		/*
-		Emp sch01 = new Emp();
-		sch01.setEname("S");
+		}
+		Emp sch = new Emp();
+		sch.setEname("S");
 		System.out.println("검색 처리 메서드 호출~~~~");
-		for(Emp emp:db.search(sch01)){
+		for(Emp emp:db.search(sch)){
 			System.out.print(emp.getEmpno()+"\t");
 			System.out.print(emp.getEname()+"\t");
 			System.out.print(emp.getMgr()+"\t");
@@ -314,8 +237,7 @@ public class A01_EmpDB {
 			System.out.print(emp.getSal()+"\t");
 			System.out.print(emp.getComm()+"\t");
 			System.out.print(emp.getDeptno()+"\n");
-		}	
-		*/	
+		}		
 		
 	}
 

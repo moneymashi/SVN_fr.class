@@ -1,6 +1,6 @@
 package jspexp.z01_database;
 
-import java.sql.Connection; 
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -271,11 +271,6 @@ public class A01_EmpDB {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		A01_EmpDB db = new A01_EmpDB();
-<<<<<<< .mine
-		/*System.out.println(db.empList().size());
-||||||| .r920
-		System.out.println(db.empList().size());
-=======
 		// 입력할 내용 DTO
 		Emp dto= new Emp();
 		dto.setEname("설현");
@@ -290,7 +285,6 @@ public class A01_EmpDB {
 		
 		
 		System.out.println(db.empList().size());
->>>>>>> .r925
 		for(Emp emp:db.empList()){
 			System.out.print(emp.getEmpno()+"\t");
 			System.out.print(emp.getEname()+"\t");
@@ -300,7 +294,7 @@ public class A01_EmpDB {
 			System.out.print(emp.getSal()+"\t");
 			System.out.print(emp.getComm()+"\t");
 			System.out.print(emp.getDeptno()+"\n");
-		}*/
+		}
 		/*
 		Emp sch01 = new Emp();
 		sch01.setEname("S");
