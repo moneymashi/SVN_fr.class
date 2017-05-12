@@ -24,6 +24,24 @@ $(document).ready(function(){
 		alert("등록 화면 이동");
 		$(location).attr("href","a04_insertEmp.jsp");
 	});
+	$("tr").hover( function(){
+		$(this).css("background","#99ff99");
+	}, function(){
+		$(this).css("background","#ffffff");
+	} );
+	$("tr").click(function(){
+		// 상세화면 page와  empno를 넘기면 상세화면에서
+		// 1개 데이터 조회 처리..
+		var empno=$(this).children().eq(0).html();
+		//var ename=$(this).children().eq(1).html();
+		//alert(ename);
+		// get방식으로 처리..
+		// a06_empDetail.jsp?넘길
+		// 해당 page에서 전달 받음.request.getParameter("empno")
+		$(location).attr("href","a06_empDetail.jsp?empno="+empno);
+		
+	});
+	
 });
 </script>
 </head>
