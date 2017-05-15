@@ -20,7 +20,7 @@ $(document).ready(function(){
 	$("input[type=button]").on("click",function(){
 		// 데이터 validate check..
 		if( confirm("전송하시겠습니까?") ){
-			$("form").submit();  //### 처음으로 써보는군..;;
+			$("form").submit();
 		}
 	});
 });
@@ -41,7 +41,7 @@ $(document).ready(function(){
 <h3>전송된 값</h3>
 <%if(revFruits!=null && revFruits.length>0){
   	for(String fruit:revFruits){ %>
-  		<%=fruit%>
+  		<%=fruit%>,
 <%	}
   }%>
 </body>

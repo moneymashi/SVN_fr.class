@@ -1,6 +1,6 @@
 package jspexp.z01_database;
 
-import java.sql.Connection; 
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -169,7 +169,8 @@ public class A01_EmpDB {
 			String sql="SELECT * \n"
 					+ "FROM EMP  \n" 
 					+ "WHERE ENAME LIKE '%' || ? || '%'  \n"
-					+ "AND JOB LIKE '%'||?||'%' ";
+					+ "AND JOB LIKE '%'||?||'%' \n"
+					+ "ORDER BY EMPNO DESC ";
 			System.out.println(sql);
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1, sch.getEname()); //첫번째
@@ -216,6 +217,60 @@ public class A01_EmpDB {
 		}
 		return list;
 	}
+	// 1개검색 메서드
+	public Emp oneEmp(int empno){
+		Emp emp=null; 
+		try {
+			setConn();
+
+			String sql="SELECT * \n"
+					+ "FROM EMP  \n" 
+					+ "WHERE empno =? \n";
+			System.out.println(sql);
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1, empno);
+			
+			rs = pstmt.executeQuery();
+			// 단위 객체 선언
+			if( rs.next() ){
+				emp = new Emp();
+				emp.setEmpno(rs.getInt("empno"));
+				emp.setEname(rs.getString("ename"));
+				emp.setJob(rs.getString("job"));
+				emp.setMgr(rs.getInt("mgr"));
+				emp.setHiredate(rs.getDate("hiredate"));
+				emp.setSal(rs.getDouble("sal"));
+				emp.setComm(rs.getDouble("comm"));
+				emp.setDeptno(rs.getInt("deptno"));
+			}
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			// 수정,삭제, 등록  rollback()
+			e.printStackTrace();
+		}finally{
+			// 자원 해제
+			try {
+				if(rs!=null){
+					// ResultSet가 현재 메모리에 할당 되어 있다면.
+					rs.close();
+				}
+				if(pstmt!=null){
+					pstmt.close();
+				}	
+				if(con!=null){
+					con.close();
+				}				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return emp;
+	}
+
 	// 입력메서드 만들기..
 	public void insertEmp(Emp ins){
 		// db 연결처리..
@@ -267,6 +322,7 @@ public class A01_EmpDB {
 		}
 		
 	}
+	// 수정처리.
 	public void updateEmp(Emp upt){
 		try {
 			con = A00_DB.conn();
@@ -318,19 +374,64 @@ public class A01_EmpDB {
 			}
 		}
 	}
+	// 삭제처리.
+	public void deleteEmp(int empno){
+		
+		try {
+			con=A00_DB.conn();
+			con.setAutoCommit(false);
+			String sql="delete from emp "
+			        	+ "where empno=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1, empno);
+			pstmt.executeUpdate();
+			con.commit();
+			
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+			try {
+				con.rollback();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}finally{
+			try {
+				pstmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			try {
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		A01_EmpDB db = new A01_EmpDB();
+		// 수정할 내용 DTO
 		Emp dto= new Emp();
-		dto.setEname("aa");
-		dto.setJob("accs");
+		dto.setEname("수지");
+		dto.setJob("가수");
 		dto.setMgr(7839);
 		dto.setSal(8888);
 		dto.setComm(888);
 		dto.setDeptno(40);
 		dto.setEmpno(7936);
-//		db.insertEmp(dto); // 
-		db.updateEmp(dto); // 
+//		db.insertEmp(dto); // 데이터 입력처리.
+		db.updateEmp(dto); // 수정처리..
 		System.out.println(db.empList().size());
 		for(Emp emp:db.empList()){
 			System.out.print(emp.getEmpno()+"\t");
@@ -345,7 +446,7 @@ public class A01_EmpDB {
 		/*
 		Emp sch01 = new Emp();
 		sch01.setEname("S");
-		System.out.println("check");
+		System.out.println("검색 처리 메서드 호출~~~~");
 		for(Emp emp:db.search(sch01)){
 			System.out.print(emp.getEmpno()+"\t");
 			System.out.print(emp.getEname()+"\t");
