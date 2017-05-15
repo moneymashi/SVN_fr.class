@@ -11,14 +11,14 @@ import java.util.ArrayList;
 import jspexp.z02_vo.Emp;
 
 /*
- * XXXDB.java»ı¼º
- * voÆĞÅ°Áö
+ * XXXDB.javaìƒì„±
+ * voíŒ¨í‚¤ì§€
  * 
- * field¼±¾ğ
- * 1. Connection con :¿¬°á°´Ã¼
- * 2. Statement stmt :´ëÈ­
+ * fieldì„ ì–¸
+ * 1. Connection con :ì—°ê²°ê°ì²´
+ * 2. Statement stmt :ëŒ€í™”
  * 		PreStatement pstmt
- * 3. ResultSet rs; : °á°ú
+ * 3. ResultSet rs; : ê²°ê³¼
  * 
  */
 public class A01_EmpDB {
@@ -29,47 +29,47 @@ public class A01_EmpDB {
 	private ResultSet rs;
 	
 	/*public*/private void setConn() throws ClassNotFoundException,SQLException{
-				//#####!!! throws~~~ exceptions À¸·Î À§ÀÓÇÑ°÷ÀÌ¹Ç·Î try catch°¡ ÀÏÀÏÈ÷ ÇÊ¿ä¾ø´Ù.
-		// 1. driver ¸Ş¸ğ¸®¿¡ ¿Ã¸®±â
+				//#####!!! throws~~~ exceptions ìœ¼ë¡œ ìœ„ì„í•œê³³ì´ë¯€ë¡œ try catchê°€ ì¼ì¼íˆ í•„ìš”ì—†ë‹¤.
+		// 1. driver ë©”ëª¨ë¦¬ì— ì˜¬ë¦¬ê¸°
 		// 2. DriverManager.getConnection(url, id, pass)
-			Class.forName("oracle.jdbc.driver.OracleDriver");  //try catchÇØÁà¾ß ¿¡·¯¶óÀÎ ¾È¶ä.
-			//DBµå¶óÀÌ¹öÁ¾·ù(thin)@ip:port:sid  //####±âº»ÀûÀ¸·Î ¿¬°áÇÒ‹š ÇÊ¿äÇÏ´Ù.
+			Class.forName("oracle.jdbc.driver.OracleDriver");  //try catchí•´ì¤˜ì•¼ ì—ëŸ¬ë¼ì¸ ì•ˆëœ¸.
+			//DBë“œë¼ì´ë²„ì¢…ë¥˜(thin)@ip:port:sid  //####ê¸°ë³¸ì ìœ¼ë¡œ ì—°ê²°í• ë–„ í•„ìš”í•˜ë‹¤.
 			String conInfo = "jdbc:oracle:thin:@localhost:1521:xe";
 			con = DriverManager.getConnection(conInfo, "scott", "tiger");
 			System.out.println("Connection completed");
 	}
 	/*
-	 *  emp Å×ÀÌºí¿¡ select * from empÅëÇØ¼­ °¡Á®¿À´Â µ¥ÀÌÅÍ¸¦ 
-	 *  ArrayList<Emp>·Î °¡Á®¿Ã°ÅÀÓ.
+	 *  emp í…Œì´ë¸”ì— select * from empí†µí•´ì„œ ê°€ì ¸ì˜¤ëŠ” ë°ì´í„°ë¥¼ 
+	 *  ArrayList<Emp>ë¡œ ê°€ì ¸ì˜¬ê±°ì„.
 	 */
 	public ArrayList <Emp> empList(){
 		ArrayList<Emp> list = new ArrayList<Emp>();
 		
-		//1.¿¬°á
+		//1.ì—°ê²°
 		try {
 			setConn();
-			//2. ´ëÈ­
+			//2. ëŒ€í™”
 			stmt = con.createStatement();
-			//sqlÃ³¸®.. 
+			//sqlì²˜ë¦¬.. 
 			String sql = "select * from emp";
-			//´ëÈ­¸¦ ÇÏ°í °á°ú°ª resultSet
+			//ëŒ€í™”ë¥¼ í•˜ê³  ê²°ê³¼ê°’ resultSet
 			rs = stmt.executeQuery(sql);
 			
-			//3. °á°ú. (select ==> ResultSet, insert/update/delete ==> DB³» Á¤¸®.)
-			// rs.next() : loop ºí·°{}À» Ã³¸®ÇÑ ÈÄ¿¡, ´ÙÀ½ row¿¡ µ¥ÀÌÅÍ°¡ ÀÖ´ÂÁö ¿©ºÎ boolean return.
-			// rs.getXXXX("º°¸í/Å¸ÀÌÆ²¸í")   // µ¥ÀÌÅÍº£ÀÌ½ºÀÇ ÄÃ·³¸íX
+			//3. ê²°ê³¼. (select ==> ResultSet, insert/update/delete ==> DBë‚´ ì •ë¦¬.)
+			// rs.next() : loop ë¸”ëŸ­{}ì„ ì²˜ë¦¬í•œ í›„ì—, ë‹¤ìŒ rowì— ë°ì´í„°ê°€ ìˆëŠ”ì§€ ì—¬ë¶€ boolean return.
+			// rs.getXXXX("ë³„ëª…/íƒ€ì´í‹€ëª…")   // ë°ì´í„°ë² ì´ìŠ¤ì˜ ì»¬ëŸ¼ëª…X
 			/*
-			 *  1) ArrayList<Emp> ¿¡ µ¥ÀÌÅÍ¸¦ ´ãÀº ´ÜÀ§°´Ã¼(Emp)¸¦ Ãß°¡
-			 *  Emp (»ı¼º, µ¥ÀÌÅÍÇÒ´ç)  --> ArrayList<Emp> add
+			 *  1) ArrayList<Emp> ì— ë°ì´í„°ë¥¼ ë‹´ì€ ë‹¨ìœ„ê°ì²´(Emp)ë¥¼ ì¶”ê°€
+			 *  Emp (ìƒì„±, ë°ì´í„°í• ë‹¹)  --> ArrayList<Emp> add
 			 */
 			Emp emp = null;
-			// Emp emp¸¦ loop¹®¾È¿¡ ¼±¾ğÇÏ¸é¤·ÂüÁ¶°´Ã¼°¡ ¹İº¹¸¸Å­ »ı°Ü¼­, ¸Ş¸ğ¸®ºÎÇÏ¹ß»ı
+			// Emp empë¥¼ loopë¬¸ì•ˆì— ì„ ì–¸í•˜ë©´ã…‡ì°¸ì¡°ê°ì²´ê°€ ë°˜ë³µë§Œí¼ ìƒê²¨ì„œ, ë©”ëª¨ë¦¬ë¶€í•˜ë°œìƒ
 			while(rs.next()){
-				// Emp emp = new Emp(); loop¹® ¹Û¿¡¼­ »ı¼ºÇÏ°í, loop¹® ¾È¿¡ »ı¼ºÇÏÁö ¾ÊÀ¸¸é 
-				// °°Àº°´Ã¼¸¦ ÂüÁ¶°¡¶§¹®¿¡, ¸¶Áö¸· µ¥ÀÌÅÍ¸¦ µ¥ÀÌÅÍ °Ç¼ö¸¸Å­ ÇÒ´ç.
+				// Emp emp = new Emp(); loopë¬¸ ë°–ì—ì„œ ìƒì„±í•˜ê³ , loopë¬¸ ì•ˆì— ìƒì„±í•˜ì§€ ì•Šìœ¼ë©´ 
+				// ê°™ì€ê°ì²´ë¥¼ ì°¸ì¡°ê°€ë•Œë¬¸ì—, ë§ˆì§€ë§‰ ë°ì´í„°ë¥¼ ë°ì´í„° ê±´ìˆ˜ë§Œí¼ í• ë‹¹.
 				emp = new Emp();
-				// emp.setEmpno() ¿¡ °¡Á®¿Â µ¥ÀÌÅÍ(rs.getInt("empno"))
-				//ÇÒ´çÇÔÀ¸·Î empnoÇÊµå¿¡ µ¥ÀÌÅÍ¸¦ ÀúÀå.
+				// emp.setEmpno() ì— ê°€ì ¸ì˜¨ ë°ì´í„°(rs.getInt("empno"))
+				//í• ë‹¹í•¨ìœ¼ë¡œ empnoí•„ë“œì— ë°ì´í„°ë¥¼ ì €ì¥.
 				emp.setEmpno(rs.getInt("empno"));
 				emp.setEname(rs.getString("ename"));
 				emp.setJob(rs.getString("job"));
@@ -87,18 +87,18 @@ public class A01_EmpDB {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			// ¼öÁ¤, »èÁ¦, µî·Ï rollback()
+			// ìˆ˜ì •, ì‚­ì œ, ë“±ë¡ rollback()
 			
 		}finally{
 			/*
-			 * ÀÚ¿øÇÒ´ç ¼ø¼­: Connection -> Statement -> ResultSet
-			 * ÀÚ¿øÇØÁ¦¼ø¼­: ResultSet -> Statements -> Connection.
-			 * if(ÀÚ¿ø!= null) ÀÚ¿ø.close()
-			 *  // ÁÖ·Î finally¿¡¼­ Ã³¸®µÈ´Ù.
+			 * ìì›í• ë‹¹ ìˆœì„œ: Connection -> Statement -> ResultSet
+			 * ìì›í•´ì œìˆœì„œ: ResultSet -> Statements -> Connection.
+			 * if(ìì›!= null) ìì›.close()
+			 *  // ì£¼ë¡œ finallyì—ì„œ ì²˜ë¦¬ëœë‹¤.
 			 */
 			try {
-				if(rs != null)   // resultSetÀÌ ¸Ş¸ğ¸®¿¡ ÇÒ´çµÇ¾îÀÖÀ¸¸é..
-					rs.close();  // IO¹ß»ıÇØ¼­ ¿¹¿ÜÃ³¸® ÇØÁà¾ßÇÔ.
+				if(rs != null)   // resultSetì´ ë©”ëª¨ë¦¬ì— í• ë‹¹ë˜ì–´ìˆìœ¼ë©´..
+					rs.close();  // IOë°œìƒí•´ì„œ ì˜ˆì™¸ì²˜ë¦¬ í•´ì¤˜ì•¼í•¨.
 				if(stmt != null)
 					stmt.close();
 				if(con != null)
@@ -125,7 +125,7 @@ public class A01_EmpDB {
 			System.out.println(sql);
 			
 			rs = stmt.executeQuery(sql);
-			Emp emp=null; // ´ÜÀ§ °´Ã¼ ¼±¾ğ
+			Emp emp=null; // ë‹¨ìœ„ ê°ì²´ ì„ ì–¸
 			while(rs.next()){
 				emp = new Emp();
 				emp.setEmpno(rs.getInt("empno"));
@@ -138,7 +138,7 @@ public class A01_EmpDB {
 				emp.setDeptno(rs.getInt("deptno"));
 				list.add(emp);		
 			}
-			// ¼öÁ¤, »èÁ¦, µî·Ï  ½Ã ==> commit()
+			// ìˆ˜ì •, ì‚­ì œ, ë“±ë¡  ì‹œ ==> commit()
 			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
@@ -146,7 +146,7 @@ public class A01_EmpDB {
 			e.printStackTrace();
 		}finally{
 			
-			// ÀÚ¿ø ÇØÁ¦
+			// ìì› í•´ì œ
 			try {
 				if(rs!=null){
 					rs.close();
@@ -178,7 +178,7 @@ public class A01_EmpDB {
 			System.out.println(sql);
 			
 			rs = pstmt.executeQuery();
-			Emp emp=null; // ´ÜÀ§ °´Ã¼ ¼±¾ğ
+			Emp emp=null; // ë‹¨ìœ„ ê°ì²´ ì„ ì–¸
 			while(rs.next()){
 				emp = new Emp();
 				emp.setEmpno(rs.getInt("empno"));
@@ -191,7 +191,7 @@ public class A01_EmpDB {
 				emp.setDeptno(rs.getInt("deptno"));
 				list.add(emp);		
 			}
-			// ¼öÁ¤, »èÁ¦, µî·Ï  ½Ã ==> commit()
+			// ìˆ˜ì •, ì‚­ì œ, ë“±ë¡  ì‹œ ==> commit()
 			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
@@ -199,7 +199,7 @@ public class A01_EmpDB {
 			e.printStackTrace();
 		}finally{
 			
-			// ÀÚ¿ø ÇØÁ¦
+			// ìì› í•´ì œ
 			try {
 				if(rs!=null){
 					rs.close();
@@ -221,7 +221,7 @@ public class A01_EmpDB {
 		// TODO Auto-generated method stub
 		A01_EmpDB db = new A01_EmpDB();
 		
-		// search() È°¿ë.
+		// search() í™œìš©.
 		Emp sch = new Emp();
 		for(Emp emp: db.searchPre(sch)  /*search*/){
 			System.out.println(
