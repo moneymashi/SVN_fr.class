@@ -267,30 +267,71 @@ public class A01_EmpDB {
 		}
 		
 	}
-
+	public void updateEmp(Emp upt){
+		try {
+			con = A00_DB.conn();
+			con.setAutoCommit(false);
+			String sql="update emp      "+
+						"   set ename=?,"+
+						"	   job=?,   "+
+						"	   mgr=?,   "+
+						"	   sal=?,   "+
+						"	   comm=?,  "+
+						"	   deptno=? "+
+						"where empno=?  ";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, upt.getEname());
+			pstmt.setString(2, upt.getJob());
+			pstmt.setInt(3,  upt.getMgr());
+			pstmt.setDouble(4,  upt.getSal());
+			pstmt.setDouble(5,  upt.getComm());
+			pstmt.setInt(6,  upt.getDeptno());
+			pstmt.setInt(7,  upt.getEmpno());
+			pstmt.executeUpdate();
+			con.commit();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+			try {
+				con.rollback();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}finally{
+			try {
+				pstmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			try {
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		A01_EmpDB db = new A01_EmpDB();
-<<<<<<< .mine
-		/*System.out.println(db.empList().size());
-||||||| .r920
-		System.out.println(db.empList().size());
-=======
-		// 입력할 내용 DTO
 		Emp dto= new Emp();
-		dto.setEname("설현");
-		dto.setJob("연예인");
+		dto.setEname("aa");
+		dto.setJob("accs");
 		dto.setMgr(7839);
-		dto.setSal(9999);
-		dto.setComm(999);
+		dto.setSal(8888);
+		dto.setComm(888);
 		dto.setDeptno(40);
-		db.insertEmp(dto); // 데이터 입력처리.
-		
-		
-		
-		
+		dto.setEmpno(7936);
+//		db.insertEmp(dto); // 
+		db.updateEmp(dto); // 
 		System.out.println(db.empList().size());
->>>>>>> .r925
 		for(Emp emp:db.empList()){
 			System.out.print(emp.getEmpno()+"\t");
 			System.out.print(emp.getEname()+"\t");
@@ -300,11 +341,11 @@ public class A01_EmpDB {
 			System.out.print(emp.getSal()+"\t");
 			System.out.print(emp.getComm()+"\t");
 			System.out.print(emp.getDeptno()+"\n");
-		}*/
+		}
 		/*
 		Emp sch01 = new Emp();
 		sch01.setEname("S");
-		System.out.println("검색 처리 메서드 호출~~~~");
+		System.out.println("check");
 		for(Emp emp:db.search(sch01)){
 			System.out.print(emp.getEmpno()+"\t");
 			System.out.print(emp.getEname()+"\t");
