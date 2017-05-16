@@ -3,16 +3,16 @@ package javaexp.a12_collection;
 import java.util.ArrayList;
 
 /*
-	ArrayList È®ÀÎ¿¹Á¦ 
-	°úÀÏ°¡°Ô ArrayList : sellList
-	Àåº¸´Â »ç¶÷ ArrayList : buyList
-	½Ã³ª¸®¿À
+	ArrayList í™•ì¸ì˜ˆì œ 
+	ê³¼ì¼ê°€ê²Œ ArrayList : sellList
+	ì¥ë³´ëŠ” ì‚¬ëŒ ArrayList : buyList
+	ì‹œë‚˜ë¦¬ì˜¤
 	 
-	- »ç°ú, ¹Ù³ª³ª, µş±â, ¿À·»Áö, ¼ö¹ÚÀ» ÆÈ°í ÀÖ½À´Ï´Ù. addÃ³¸®
-	- Àåº¸´Â »ç¶÷ÀÌ »ç°ú¿Í µş±â¸¦ ±¸¸ÅÇß½À´Ï´Ù. remove, addÃ³¸®
-	- °úÀÏ°¡°Ô¿¡¼­ ¹Ù³ª³ª¸¦ »ç°ú·Î º¯°æÁ™½À´Ï´Ù. setÃ³¸®
-	- Àåº¸´Â »ç¶÷ÀÌ »ç°ú¿Í µş±â¸¦ ´Ù ¸Ô¾ú½À´Ï´Ù. removeÃ³¸®
-	- Àåº¸´Â »ç¶÷ÀÌ °¡Áö°í ÀÖ´Â °úÀÏÀÌ ¾ø´Ù¸é °úÀÏ°¡°Ô¿¡¼­ ³²Àº °úÀÏ Áß ÇÏ³ª¸¦ Àåº¸´Â »ç¶÷¿¡°Ô »çÀºÇ°À¸·Î ÁÖ±â·Î Çß½À´Ï´Ù.
+	- ì‚¬ê³¼, ë°”ë‚˜ë‚˜, ë”¸ê¸°, ì˜¤ë Œì§€, ìˆ˜ë°•ì„ íŒ”ê³  ìˆìŠµë‹ˆë‹¤. addì²˜ë¦¬
+	- ì¥ë³´ëŠ” ì‚¬ëŒì´ ì‚¬ê³¼ì™€ ë”¸ê¸°ë¥¼ êµ¬ë§¤í–ˆìŠµë‹ˆë‹¤. remove, addì²˜ë¦¬
+	- ê³¼ì¼ê°€ê²Œì—ì„œ ë°”ë‚˜ë‚˜ë¥¼ ì‚¬ê³¼ë¡œ ë³€ê²½í—€ìŠµë‹ˆë‹¤. setì²˜ë¦¬
+	- ì¥ë³´ëŠ” ì‚¬ëŒì´ ì‚¬ê³¼ì™€ ë”¸ê¸°ë¥¼ ë‹¤ ë¨¹ì—ˆìŠµë‹ˆë‹¤. removeì²˜ë¦¬
+	- ì¥ë³´ëŠ” ì‚¬ëŒì´ ê°€ì§€ê³  ìˆëŠ” ê³¼ì¼ì´ ì—†ë‹¤ë©´ ê³¼ì¼ê°€ê²Œì—ì„œ ë‚¨ì€ ê³¼ì¼ ì¤‘ í•˜ë‚˜ë¥¼ ì¥ë³´ëŠ” ì‚¬ëŒì—ê²Œ ì‚¬ì€í’ˆìœ¼ë¡œ ì£¼ê¸°ë¡œ í–ˆìŠµë‹ˆë‹¤.
 */
 
 
@@ -20,7 +20,7 @@ class Seller{
 	private String sName;
 	Seller(String sName){
 		this.sName = sName;
-		System.out.println("¾î¼­¿À¼¼¿ä!" + this.sName + "ÀÔ´Ï´Ù! ¹°°Çµé ³Ê¹« ½Î´Ù!");
+		System.out.println("ì–´ì„œì˜¤ì„¸ìš”!" + this.sName + "ì…ë‹ˆë‹¤! ë¬¼ê±´ë“¤ ë„ˆë¬´ ì‹¸ë‹¤!");
 	}
 	private ArrayList<String> sellList = new ArrayList<String>();
 	private int findpId(String pName){
@@ -46,10 +46,10 @@ class Seller{
 			for(String pName:pNames){
 			if(!sellList.contains(pName)){
 				//throw new IsEmptyException();
-				System.out.println("ÁË¼ÛÇÕ´Ï´Ù."+ pName+"¶ó´Â ¹°°ÇÀÌ ¾ø½À´Ï´Ù!");
+				System.out.println("ì£„ì†¡í•©ë‹ˆë‹¤."+ pName+"ë¼ëŠ” ë¬¼ê±´ì´ ì—†ìŠµë‹ˆë‹¤!");
 				int rand01=(int)(Math.random()*sellList.size());
 				String reward = sellList.get(rand01);
-				System.out.println("´ë½Å."+ reward+"À¸·Î º¸»ó ÇØµå¸³´Ï´Ù!");
+				System.out.println("ëŒ€ì‹ ."+ reward+"ìœ¼ë¡œ ë³´ìƒ í•´ë“œë¦½ë‹ˆë‹¤!");
 				return reward;
 			}
 			int pId = findpId(pName);
@@ -62,7 +62,7 @@ class Seller{
 		return "";
 	}
 	public void nowOwn(){
-		System.out.println("Áö±İ °¡Áö°íÀÖ´Â ½Ì½ÌÇÑ ¹°°ÇµéÀÔ´Ï´Ù!!");
+		System.out.println("ì§€ê¸ˆ ê°€ì§€ê³ ìˆëŠ” ì‹±ì‹±í•œ ë¬¼ê±´ë“¤ì…ë‹ˆë‹¤!!");
 		for(int all =0; all<sellList.size(); all++){
 			System.out.println( (all+1)+ ". "+ sellList.get(all) );
 		}
@@ -95,7 +95,7 @@ class Buyer{
 		}
 	}
 	public void nowOwn(){
-		System.out.println("±¸¸ÅÀÚ º¸À¯ ¹°°ÇµéÀÔ´Ï´Ù!!");
+		System.out.println("êµ¬ë§¤ì ë³´ìœ  ë¬¼ê±´ë“¤ì…ë‹ˆë‹¤!!");
 		for(int all =0; all<buyList.size(); all++){
 			System.out.println( (all+1)+ ". "+ buyList.get(all) );
 		}
@@ -104,28 +104,28 @@ class Buyer{
 
 public class A03_HW0509_prac {
 	public static void main(String[] args) {
-		Seller s01 = new Seller("Ã»¹°»óÈ¸");
-		//1¹ø. »ç°ú, ¹Ù³ª³ª, µş±â, ¿À·»Áö, ¼ö¹ÚÀ» ÆÈ°í ÀÖ½À´Ï´Ù. addÃ³¸®
-		s01.addProduct("»ç°ú","¹Ù³ª³ª","µş±â","¿À·»Áö","¼ö¹Ú");
+		Seller s01 = new Seller("ì²­ë¬¼ìƒíšŒ");
+		//1ë²ˆ. ì‚¬ê³¼, ë°”ë‚˜ë‚˜, ë”¸ê¸°, ì˜¤ë Œì§€, ìˆ˜ë°•ì„ íŒ”ê³  ìˆìŠµë‹ˆë‹¤. addì²˜ë¦¬
+		s01.addProduct("ì‚¬ê³¼","ë°”ë‚˜ë‚˜","ë”¸ê¸°","ì˜¤ë Œì§€","ìˆ˜ë°•");
 		s01.nowOwn();
 		
-		//2¹ø. Àåº¸´Â »ç¶÷ÀÌ »ç°ú¿Í µş±â¸¦ ±¸¸ÅÇß½À´Ï´Ù. remove, addÃ³¸®
+		//2ë²ˆ. ì¥ë³´ëŠ” ì‚¬ëŒì´ ì‚¬ê³¼ì™€ ë”¸ê¸°ë¥¼ êµ¬ë§¤í–ˆìŠµë‹ˆë‹¤. remove, addì²˜ë¦¬
 		Buyer b01 = new Buyer();
-		b01.buyProduct("»ç°ú","µş±â");
-		s01.removeProduct("»ç°ú","µş±â");
+		b01.buyProduct("ì‚¬ê³¼","ë”¸ê¸°");
+		s01.removeProduct("ì‚¬ê³¼","ë”¸ê¸°");
 		s01.nowOwn();
 		b01.nowOwn();
 		
-		//3¹ø. °úÀÏ°¡°Ô¿¡¼­ ¹Ù³ª³ª¸¦ »ç°ú·Î º¯°æÁ™½À´Ï´Ù. setÃ³¸®
-		s01.changeProduct("¹Ù³ª³ª", "»ç°ú");
+		//3ë²ˆ. ê³¼ì¼ê°€ê²Œì—ì„œ ë°”ë‚˜ë‚˜ë¥¼ ì‚¬ê³¼ë¡œ ë³€ê²½í—€ìŠµë‹ˆë‹¤. setì²˜ë¦¬
+		s01.changeProduct("ë°”ë‚˜ë‚˜", "ì‚¬ê³¼");
 		s01.nowOwn();
 		
-		//4¹ø. Àåº¸´Â »ç¶÷ÀÌ »ç°ú¿Í µş±â¸¦ ´Ù ¸Ô¾ú½À´Ï´Ù. removeÃ³¸®
-		b01.eatProduct("»ç°ú","µş±â");
+		//4ë²ˆ. ì¥ë³´ëŠ” ì‚¬ëŒì´ ì‚¬ê³¼ì™€ ë”¸ê¸°ë¥¼ ë‹¤ ë¨¹ì—ˆìŠµë‹ˆë‹¤. removeì²˜ë¦¬
+		b01.eatProduct("ì‚¬ê³¼","ë”¸ê¸°");
 		b01.nowOwn();
 		
-		//5¹ø. ½ÇÆĞ!! °úÀÏÀÌ ¾ø´Ù¸é °úÀÏ°¡°Ô¿¡¼­ ³²Àº °úÀÏ Áß ÇÏ³ª¸¦ Àåº¸´Â »ç¶÷¿¡°Ô »çÀºÇ°
-		b01.buyProduct(s01.removeProduct("Æ÷µµ"));
+		//5ë²ˆ. ì‹¤íŒ¨!! ê³¼ì¼ì´ ì—†ë‹¤ë©´ ê³¼ì¼ê°€ê²Œì—ì„œ ë‚¨ì€ ê³¼ì¼ ì¤‘ í•˜ë‚˜ë¥¼ ì¥ë³´ëŠ” ì‚¬ëŒì—ê²Œ ì‚¬ì€í’ˆ
+		b01.buyProduct(s01.removeProduct("í¬ë„"));
 		b01.nowOwn();
 	}
 }
