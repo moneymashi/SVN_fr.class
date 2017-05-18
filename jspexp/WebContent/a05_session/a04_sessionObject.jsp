@@ -11,7 +11,7 @@ String path=request.getContextPath();
 		<title>17.05.</title>
 		<style type="text/css">
 		</style>
-		<script src="/<%=path%>/com/jquery-1.10.2.js"></script>
+		<script src="<%=path%>/com/jquery-1.10.2.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
 				

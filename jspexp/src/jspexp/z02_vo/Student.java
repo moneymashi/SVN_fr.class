@@ -1,5 +1,5 @@
 package jspexp.z02_vo;
-
+// jspexp.z02_vo.Student
 public class Student {
 	private String name;
 	private int grade;
