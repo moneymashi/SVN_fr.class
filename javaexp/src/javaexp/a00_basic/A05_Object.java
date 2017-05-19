@@ -3,7 +3,7 @@ package javaexp.a00_basic;
 /*객체 클래스 선언*/
 /*
 class 클래스명{
-
+asdas
  * */
 class Student{
 	// 클래스에서 사용될 변수 선언
