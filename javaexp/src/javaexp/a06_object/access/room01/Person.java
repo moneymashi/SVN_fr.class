@@ -1,5 +1,5 @@
 package javaexp.a06_object.access.room01;
-// ì„ ì–¸ì„ defaultë¡œ !!package ë‚´ì—ì„œë§Œ?
+// ¼±¾ğÀ» default·Î !!package ³»¿¡¼­¸¸?
 class Person {
 
 }

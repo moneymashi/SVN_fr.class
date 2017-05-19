@@ -8,17 +8,17 @@ public class A16_interface_annonymous {
 			@Override
 			public void turnOn() {
 				// TODO Auto-generated method stub
-				System.out.println("í•¸ë“œí°ì„ ì¼œë‹¤");
+				System.out.println("ÇÚµåÆùÀ» ÄÑ´Ù");
 			}
 			@Override
 			public void turnOff() {
 				// TODO Auto-generated method stub
-				System.out.println("í•¸ë“œí°ì„ êº¼ë‹¤");
+				System.out.println("ÇÚµåÆùÀ» ²¨´Ù");
 			}		
 			@Override
 			public void setVolume(int volumn) {
 				// TODO Auto-generated method stub
-				System.out.println("í•¸ë“œí°ì˜  volumnì„ "+volumn+"ë¡œ ì¡°ì •í•˜ë‹¤");
+				System.out.println("ÇÚµåÆùÀÇ  volumnÀ» "+volumn+"·Î Á¶Á¤ÇÏ´Ù");
 				
 			}
 		};	

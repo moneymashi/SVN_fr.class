@@ -7,32 +7,32 @@ class Worker{
 		this.kind = kind;
 	}
 	public void working(){
-		System.out.println(kind+"ê°€ ì¼ì„ í•©ë‹ˆë‹¤!");
+		System.out.println(kind+"°¡ ÀÏÀ» ÇÕ´Ï´Ù!");
 	}
 }
 class Engineer extends Worker{
-	// ìƒì†ì—ì„œ ìƒì„±ìëŠ” ìƒìœ„ì— êµ¬í˜„ëœ ë‚´ìš©ìœ¼ë¡œ ì •ì˜ ë˜ì–´ì•¼ í•œë‹¤.
+	// »ó¼Ó¿¡¼­ »ı¼ºÀÚ´Â »óÀ§¿¡ ±¸ÇöµÈ ³»¿ëÀ¸·Î Á¤ÀÇ µÇ¾î¾ß ÇÑ´Ù.
 	public Engineer(){
-		super("ê°œë°œì");
+		super("°³¹ßÀÚ");
 	}
-	// ì¬ì •ì˜!!!
+	// ÀçÁ¤ÀÇ!!!
 	public void working(){
-		System.out.println(kind+"ê°€ í”„ë¡œê·¸ë¨ ê°œë°œì„ í•©ë‹ˆë‹¤!!");
+		System.out.println(kind+"°¡ ÇÁ·Î±×·¥ °³¹ßÀ» ÇÕ´Ï´Ù!!");
 	}
 }
 class PoliceMan extends Worker{
 	public PoliceMan(){
-		super("ê²½ì°°ê´€");
+		super("°æÂû°ü");
 	}
 	public void working(){
-		System.out.println(kind+"ê°€ ë„ë‘‘ì„ ì¡ìŠµë‹ˆë‹¤!");
+		System.out.println(kind+"°¡ µµµÏÀ» Àâ½À´Ï´Ù!");
 	}
 }
 public class A04_OverridingExp {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Worker w1 = new Worker("ì…€ëŸ¬ë¦¬ë§¨");
+		Worker w1 = new Worker("¼¿·¯¸®¸Ç");
 		w1.working();
 		Engineer w2 = new Engineer();
 		w2.working();

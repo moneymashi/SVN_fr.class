@@ -2,20 +2,20 @@ package javaexp.a07_inheritance.access.son2home;
 
 import javaexp.a07_inheritance.access.woodhome.WoodCutter;
 
-// ë‹¤ë¥¸ packageì— WoodCutterë¥¼ ìƒì†
+// ´Ù¸¥ package¿¡ WoodCutter¸¦ »ó¼Ó
 public class Son2 extends WoodCutter {
 	void whatWoodCutterInfo(){
 		// public
 		System.out.println(weddingAnn);
 
-		// protected ê°€ëŠ¥..
-//		ìƒì†ê´€ê³„ì— ìˆìœ¼ë©´ protectedì´ìƒì˜ ì ‘ê·¼ì œì–´ëŠ”
-//		ì ‘ê·¼ì´ ê°€ëŠ¥í•˜ë‹¤.
+		// protected °¡´É..
+//		»ó¼Ó°ü°è¿¡ ÀÖÀ¸¸é protectedÀÌ»óÀÇ Á¢±ÙÁ¦¾î´Â
+//		Á¢±ÙÀÌ °¡´ÉÇÏ´Ù.
 		System.out.println(cacheInheri);
-		// default(ê°™ì€ íŒ¨í‚¤ì§€)
-//		 ìƒì†ì´ ìˆë”ë¼ë„ ê°™ì€ packageê°€ ì•„ë‹ˆê¸°ì— ì ‘ê·¼ ì•ˆë¨.
+		// default(°°Àº ÆĞÅ°Áö)
+//		 »ó¼ÓÀÌ ÀÖ´õ¶óµµ °°Àº package°¡ ¾Æ´Ï±â¿¡ Á¢±Ù ¾ÈµÊ.
 //		System.out.println(savingMoney);		
-		// private(X) :ìƒì†ê´€ê³„ì—ì„œë„ ì ‘ê·¼ì´ ì•ˆëœë‹¤..
+		// private(X) :»ó¼Ó°ü°è¿¡¼­µµ Á¢±ÙÀÌ ¾ÈµÈ´Ù..
 //		System.out.println(privSect);
 	}
 }

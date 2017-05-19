@@ -3,31 +3,31 @@ class Animal{
 	int speed;
 	public void running(){
 		speed+=5;
-		System.out.println("ë›°ê³  ìˆìŠµë‹ˆë‹¤!");
-		System.out.println("í˜„ì¬ ì†ë„!"+speed);
+		System.out.println("¶Ù°í ÀÖ½À´Ï´Ù!");
+		System.out.println("ÇöÀç ¼Óµµ!"+speed);
 	}
-	// í•˜ìœ„í´ë˜ìŠ¤ì—ì„œ ì¬ì •ì˜ë¥¼ í•˜ì§€ ëª»í•˜ê²Œ ì²˜ë¦¬.
+	// ÇÏÀ§Å¬·¡½º¿¡¼­ ÀçÁ¤ÀÇ¸¦ ÇÏÁö ¸øÇÏ°Ô Ã³¸®.
 	public final void stop(){
 		speed=0;
-		System.out.println("ì†ë„ë¥¼ ë©ˆì¶¤!!");
+		System.out.println("¼Óµµ¸¦ ¸ØÃã!!");
 	}
 }
 class Jubatus extends Animal{
 	public void running(){
 		speed+=20;
-		System.out.println("ë›°ê³  ìˆìŠµë‹ˆë‹¤!");		
+		System.out.println("¶Ù°í ÀÖ½À´Ï´Ù!");		
 	}
-	// ìƒìœ„í´ë˜ìŠ¤ì—ì„œ finalì„ ë©”ì„œë“œì—  ë¶™ì˜€ê¸° ë•Œë¬¸ì— í•˜ìœ„ì—ì„œ
-	// í•˜ìœ„ í´ë˜ìŠ¤ì—ì„œ ë©”ì„œë“œë¥¼ ì¬ì •ì˜í•˜ì§€ ëª» í•œë‹¤.
+	// »óÀ§Å¬·¡½º¿¡¼­ finalÀ» ¸Ş¼­µå¿¡  ºÙ¿´±â ¶§¹®¿¡ ÇÏÀ§¿¡¼­
+	// ÇÏÀ§ Å¬·¡½º¿¡¼­ ¸Ş¼­µå¸¦ ÀçÁ¤ÀÇÇÏÁö ¸ø ÇÑ´Ù.
 //	public void stop(){}	
 }
 class Rabbit extends Animal{}
-// í•˜ìœ„í´ë˜ìŠ¤ì—ì„œ ìƒì†ì´ ê°€ëŠ¥í•˜ë‹¤..
+// ÇÏÀ§Å¬·¡½º¿¡¼­ »ó¼ÓÀÌ °¡´ÉÇÏ´Ù..
 class RabbitKind extends Rabbit{}
 final class Turtle extends Animal{}
-// ìƒìœ„ í´ë˜ìŠ¤ê°€ classì•ì— finalë¶™ì´ë©´
-// í•˜ìœ„ í´ë˜ìŠ¤ì—ì„œ finalë¶™ì€ ìƒìœ„í´ë˜ìŠ¤ë¥¼
-// ìƒì†í•˜ì§€ ëª»í•œë‹¤.
+// »óÀ§ Å¬·¡½º°¡ class¾Õ¿¡ finalºÙÀÌ¸é
+// ÇÏÀ§ Å¬·¡½º¿¡¼­ finalºÙÀº »óÀ§Å¬·¡½º¸¦
+// »ó¼ÓÇÏÁö ¸øÇÑ´Ù.
 //class OceanTurtle extends Turtle{};
 
 

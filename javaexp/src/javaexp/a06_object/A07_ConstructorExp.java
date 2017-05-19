@@ -10,13 +10,13 @@ class Entertainer{
 		this.kind=kind;
 	}
 	Entertainer(String name, String gender){
-		this(name,gender,"ê°œê·¸ë§¨");
+		this(name,gender,"°³±×¸Ç");
 	}	
 	Entertainer(String name){
-		this(name,"ì—¬ì","ê°€ìˆ˜");
+		this(name,"¿©ÀÚ","°¡¼ö");
 	}	
 	Entertainer(){
-		this("caren(cps)","ì—¬ì","ê°€ìˆ˜");
+		this("caren(cps)","¿©ÀÚ","°¡¼ö");
 	}		
 }
 
@@ -26,11 +26,11 @@ public class A07_ConstructorExp {
 		// TODO Auto-generated method stub
 
 		Entertainer en01 =new Entertainer();
-		Entertainer en02 =new Entertainer("ê¹€ìœ¤ì•„(ììš°ë¦¼)");	
-		Entertainer en03 =new Entertainer("ìœ ì¬ì„","ë‚¨ì");	
-		Entertainer en04 =new Entertainer("ê¹€í¬ì• ","ì—¬ì","íƒˆëœíŠ¸");
+		Entertainer en02 =new Entertainer("±èÀ±¾Æ(ÀÚ¿ì¸²)");	
+		Entertainer en03 =new Entertainer("À¯Àç¼®","³²ÀÚ");	
+		Entertainer en04 =new Entertainer("±èÈñ¾Ö","¿©ÀÚ","Å»·£Æ®");
 		
-		System.out.println("== ë‚´ê°€ ì¢‹ì•„í•˜ëŠ” ì—°ì˜ˆì¸ ==");
+		System.out.println("== ³»°¡ ÁÁ¾ÆÇÏ´Â ¿¬¿¹ÀÎ ==");
 		int num=1;		
 		System.out.println((num++)+". "+en01.name+"\t"+en01.gender+"\t"+en01.kind);
 		System.out.println((num++)+". "+en02.name+"\t"+en02.gender+"\t"+en02.kind);

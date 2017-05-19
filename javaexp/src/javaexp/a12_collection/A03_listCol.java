@@ -7,21 +7,21 @@ public class A03_listCol {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ArrayList<String> favors=new ArrayList<String>();
-		favors.add("í•¸ë“œí°"); // add:ì¶”ê°€
+		favors.add("ÇÚµåÆù"); // add:Ãß°¡
 		System.out.println("add");for(String favor:favors) System.out.println(favor);
-		favors.add(0,"ìì „ê±°"); // íŠ¹ì • ìœ„ì¹˜ì— ì¶”ê°€.
+		favors.add(0,"ÀÚÀü°Å"); // Æ¯Á¤ À§Ä¡¿¡ Ãß°¡.
 		System.out.println("add(idx,)");for(String favor:favors) System.out.println(favor);
 		System.out.println("get(1)"); System.out.println(favors.get(1));
-		// ì‚­ì œ remove(index)
+		// »èÁ¦ remove(index)
 		System.out.println("remove(0)"); favors.remove(0);
-		System.out.println("ì‚­ì œí›„");for(String favor:favors) System.out.println(favor);
-		// í˜„ì¬ ì»¬ë ‰ì…˜ì´ ë¹„ì–´ ìˆëŠ”ì§€ ì—¬ë¶€ ì¡°ì‚¬ : isEmpty()
+		System.out.println("»èÁ¦ÈÄ");for(String favor:favors) System.out.println(favor);
+		// ÇöÀç ÄÃ·º¼ÇÀÌ ºñ¾î ÀÖ´ÂÁö ¿©ºÎ Á¶»ç : isEmpty()
 		System.out.println("isEmpty()"); System.out.println(favors.isEmpty());
-		// ë‚¨ì€ ê°ì²´ ì‚­ì œ ì²˜ë¦¬ í›„, í™•ì¸
+		// ³²Àº °´Ã¼ »èÁ¦ Ã³¸® ÈÄ, È®ÀÎ
 		favors.remove(0);System.out.println(favors.isEmpty());
-		favors.add("ì‹œê³„"); for(String favor:favors) System.out.println(favor);
-		// set(index, ë³€ê²½í•  ê°ì²´)
-		System.out.println("ë³€ê²½");favors.set(0, "ì»´í“¨í„°");
+		favors.add("½Ã°è"); for(String favor:favors) System.out.println(favor);
+		// set(index, º¯°æÇÒ °´Ã¼)
+		System.out.println("º¯°æ");favors.set(0, "ÄÄÇ»ÅÍ");
 		for(String favor:favors) System.out.println(favor);
 		
 		

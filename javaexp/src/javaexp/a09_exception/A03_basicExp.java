@@ -4,33 +4,33 @@ public class A03_basicExp {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// 1ë‹¨ê³„
+		// 1´Ü°è
 		try{
-			System.out.println("idë¥¼ ì…ë ¥í•˜ì„¸ìš”!");
+			System.out.println("id¸¦ ÀÔ·ÂÇÏ¼¼¿ä!");
 //			String id=null;
 			String id="himan";
-			System.out.println("ì…ë ¥ëœ id:"+id.toString());
+			System.out.println("ÀÔ·ÂµÈ id:"+id.toString());
 		}catch(NullPointerException e){
-			System.out.println("ì•„ì´ë””ê°€ ì…ë ¥ ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤!");
+			System.out.println("¾ÆÀÌµğ°¡ ÀÔ·Â µÇÁö ¾Ê¾Ò½À´Ï´Ù!");
 		}
-		System.out.println("1ë‹¨ê³„ì¢…ë£Œ");
-		// 2ë‹¨ê³„
+		System.out.println("1´Ü°èÁ¾·á");
+		// 2´Ü°è
 		try{
-			System.out.println("idì™€ passwordë¥¼ ì…ë ¥í•˜ì„¸ìš”!");
+			System.out.println("id¿Í password¸¦ ÀÔ·ÂÇÏ¼¼¿ä!");
 //			String id=null;
 			String id="himan";
 //			String pass=null;
 			String pass="7777";
-			// ì…ë ¥ì´ ë˜ì§€ ì•Šì•˜ì„ ë•Œ, ì˜ˆì™¸ ë˜ì ¸ ì§.
+			// ÀÔ·ÂÀÌ µÇÁö ¾Ê¾ÒÀ» ¶§, ¿¹¿Ü ´øÁ® Áü.
 			if(id.equals("himan")&&pass.equals("7777")){
-				System.out.println(id+"ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤.");
+				System.out.println(id+"´Ô È¯¿µÇÕ´Ï´Ù.");
 			}else{
-				System.out.println("ì¸ì¦ë˜ì§€ ì•ŠëŠ” ê³„ì •ì…ë‹ˆë‹¤!");
+				System.out.println("ÀÎÁõµÇÁö ¾Ê´Â °èÁ¤ÀÔ´Ï´Ù!");
 			}
 		}catch(NullPointerException e){
-			System.out.println("ì•„ì´ë”” ë˜ëŠ” passwordê°€ ì…ë ¥ ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤!");
+			System.out.println("¾ÆÀÌµğ ¶Ç´Â password°¡ ÀÔ·Â µÇÁö ¾Ê¾Ò½À´Ï´Ù!");
 		}	
-		System.out.println("2ë‹¨ê³„ì¢…ë£Œ");
+		System.out.println("2´Ü°èÁ¾·á");
 		
 	}
 

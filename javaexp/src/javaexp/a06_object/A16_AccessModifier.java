@@ -1,8 +1,8 @@
 package javaexp.a06_object;
 
 public class A16_AccessModifier {
-// ì˜ˆì œëŠ” javaexp.a06_object.access íŒ¨í‚¤ì§€ë¥¼
-//	ì°¸ê³ í•˜ì„¸ìš”~~
+// ¿¹Á¦´Â javaexp.a06_object.access ÆÐÅ°Áö¸¦
+//	Âü°íÇÏ¼¼¿ä~~
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 

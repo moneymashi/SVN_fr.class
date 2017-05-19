@@ -4,39 +4,39 @@ public class A03_Array {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-// ë°°ì—´ì˜ ì„ ì–¸
+// ¹è¿­ÀÇ ¼±¾ğ
 		int [] points;
-//	ê¸°ë³¸ í¬ê¸°ê°€ ì„ ì–¸ëœ ë°°ì—´ê°ì²´ ìƒì„±
+//	±âº» Å©±â°¡ ¼±¾ğµÈ ¹è¿­°´Ã¼ »ı¼º
 		points=new int[5];
-//	ë°°ì—´ ê°ì²´ ë°ì´í„° í• ë‹¹.
+//	¹è¿­ °´Ã¼ µ¥ÀÌÅÍ ÇÒ´ç.
 		points[0] = 90;
 		points[1] = 80;
 		points[2] = 70;
-//	í•´ë‹¹ ê°ì²´ í˜¸ì¶œ.. ê¸°ë³¸í˜•ì€ ë°ì´í„°ê°€ í• ë‹¹ë˜ì§€ ì•Šìœ¼ë©´ 0ìœ¼ë¡œ ìë™í• ë‹¹
+//	ÇØ´ç °´Ã¼ È£Ãâ.. ±âº»ÇüÀº µ¥ÀÌÅÍ°¡ ÇÒ´çµÇÁö ¾ÊÀ¸¸é 0À¸·Î ÀÚµ¿ÇÒ´ç
 		for(int idx=0;idx<points.length;idx++){
-			System.out.println("ì ìˆ˜:"+points[idx]);
+			System.out.println("Á¡¼ö:"+points[idx]);
 		}
-//	ë°°ì—´ê°ì²´ ì„ ì–¸, ë°ì´í„° í• ë‹¹ 
+//	¹è¿­°´Ã¼ ¼±¾ğ, µ¥ÀÌÅÍ ÇÒ´ç 
 		double[] weights = new double[]{67.5, 70.4, 98.2};
 		for(int idx=0;idx<weights.length;idx++){
-			System.out.println("ëª¸ë¬´ê²Œ:"+weights[idx]);
+			System.out.println("¸ö¹«°Ô:"+weights[idx]);
 		}
-// ë°°ì—´ ë³µì‚¬.
-//	System.arraycopy( ì›ë³¸ë°°ì—´ê°ì²´, int ì›ë³¸ë°°ì—´ì‹œì‘index, ë³µì‚¬ë³¸ë°°ì—´ê°ì²´,
-//		               int ë³µì‚¬ë³¸ë°°ì—´ì‹œì‘ìœ„ì¹˜, int ë³µì‚¬í• ê¸¸ì´)
+// ¹è¿­ º¹»ç.
+//	System.arraycopy( ¿øº»¹è¿­°´Ã¼, int ¿øº»¹è¿­½ÃÀÛindex, º¹»çº»¹è¿­°´Ã¼,
+//		               int º¹»çº»¹è¿­½ÃÀÛÀ§Ä¡, int º¹»çÇÒ±æÀÌ)
 		int[] orginArray={1,3,5};
 		int[] targetArray= new int[5];
 		System.arraycopy(orginArray, 0, targetArray, 0, 3);
-		System.out.println("ë³µì‚¬ëœ ë°°ì—´");
+		System.out.println("º¹»çµÈ ¹è¿­");
 		for(int idx=0;idx<targetArray.length;idx++){
-			System.out.println("ë°ì´í„°:"+targetArray[idx]);
+			System.out.println("µ¥ÀÌÅÍ:"+targetArray[idx]);
 		}
-		String[] orgFruits={"ì‚¬ê³¼","ë°”ë‚˜ë‚˜","ë”¸ê¸°"};
+		String[] orgFruits={"»ç°ú","¹Ù³ª³ª","µş±â"};
 		String[] targetFruits= new String[5];
-		//                        ë°”ë‚˜ë‚˜(1)    4ë²ˆì§¸ë¶€í„°  2ê°œë³µì‚¬
+		//                        ¹Ù³ª³ª(1)    4¹øÂ°ºÎÅÍ  2°³º¹»ç
 		System.arraycopy(orgFruits, 1, targetFruits, 3, 2);
 		for(String fruit:targetFruits){
-			System.out.println("ë³µì‚¬ëœ ê³¼ì¼"+fruit);
+			System.out.println("º¹»çµÈ °úÀÏ"+fruit);
 		}
 		
 		

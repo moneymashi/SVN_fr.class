@@ -5,24 +5,24 @@ public class A15_Net_Client {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// Socket (í´ë¼ì´ì–¸íŠ¸ í†µì‹  ê°ì²´)
-		// new Socket("ì ‘ì†í•˜ê³ ìí•˜ëŠ” server ipì£¼ì†Œ", í•´ë‹¹port);
-		// localhost : ìì‹ ì˜ ì»´í“¨í„° í˜¸ì¶œ ip
+		// Socket (Å¬¶óÀÌ¾ğÆ® Åë½Å °´Ã¼)
+		// new Socket("Á¢¼ÓÇÏ°íÀÚÇÏ´Â server ipÁÖ¼Ò", ÇØ´çport);
+		// localhost : ÀÚ½ÅÀÇ ÄÄÇ»ÅÍ È£Ãâ ip
 		try {
 			Socket s1 = new Socket("localhost",5433);
-			// ì…ë ¥í•˜ëŠ” Stream InputStream
-			// ì„œë²„ ì¶œë ¥ OutputStream --> í´ë¼ì´ì–¸íŠ¸ InputStream ë°›ìŒ..
-			// ì¶œë ¥ ê¸°ë³¸ ê°ì²´ì— ë°›ì•„ì˜® InputStream
+			// ÀÔ·ÂÇÏ´Â Stream InputStream
+			// ¼­¹ö Ãâ·Â OutputStream --> Å¬¶óÀÌ¾ğÆ® InputStream ¹ŞÀ½..
+			// Ãâ·Â ±âº» °´Ã¼¿¡ ¹Ş¾Æ¿Å InputStream
 			InputStream is=s1.getInputStream();
-			// client console í™”ë©´ì— ì¶œë ¥í•˜ë ¤ë©´ 
+			// client console È­¸é¿¡ Ãâ·ÂÇÏ·Á¸é 
 			// readObject() ==> ObjectInputStream
 			ObjectInputStream dis = new ObjectInputStream(is);
 			System.out.println(dis.readObject());
-			// ìì›ì„ í•´ì œ..
+			// ÀÚ¿øÀ» ÇØÁ¦..
 			dis.close();
 			s1.close();
-			// ì„œë²„ SocketServerë¥¼ ì‹¤í–‰í•œ í›„,
-			// client Socketìœ¼ë¡œ ë°›ì•„ì˜®
+			// ¼­¹ö SocketServer¸¦ ½ÇÇàÇÑ ÈÄ,
+			// client SocketÀ¸·Î ¹Ş¾Æ¿Å
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -7,13 +7,13 @@ public class A07_while {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		char inputChar;
-		// ë¬´í•œìœ¼ë¡œ ë„ëŠ” ë‚´ìš©ì—ì„œ íŠ¹ì • ë¬¸ìë¥¼ ì…ë ¥í–ˆì„ ë•Œ,
-		// ì¢…ë£Œ ì²˜ë¦¬..
+		// ¹«ÇÑÀ¸·Î µµ´Â ³»¿ë¿¡¼­ Æ¯Á¤ ¹®ÀÚ¸¦ ÀÔ·ÂÇßÀ» ¶§,
+		// Á¾·á Ã³¸®..
 		while(true){
 			inputChar=(char)System.in.read();
-			System.out.println("ì…ë ¥ëœ ë¬¸ì:"+inputChar);
+			System.out.println("ÀÔ·ÂµÈ ¹®ÀÚ:"+inputChar);
 			if(inputChar=='Q'){
-				System.out.println("ì¤‘ë‹¨í•©ë‹ˆë‹¤!!");
+				System.out.println("Áß´ÜÇÕ´Ï´Ù!!");
 				break;
 			}
 		}

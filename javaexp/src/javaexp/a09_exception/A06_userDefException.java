@@ -1,44 +1,44 @@
 package javaexp.a09_exception;
 
-// ì‚¬ìš©ì ì •ì˜ ì˜ˆì™¸ í´ë˜ìŠ¤ ë§Œë“¤ê¸°
-// class í´ë˜ìŠ¤ëª…Exception extends Exception
+// »ç¿ëÀÚ Á¤ÀÇ ¿¹¿Ü Å¬·¡½º ¸¸µé±â
+// class Å¬·¡½º¸íException extends Exception
 class UserDefException01 extends Exception{
 
 	public UserDefException01() {
-		super("ê¸°ë³¸ ì—ëŸ¬ ë©”ì‹œì§€");
+		super("±âº» ¿¡·¯ ¸Ş½ÃÁö");
 	}
 	public UserDefException01(String message) {
 		super(message);
 	}
 	@Override
 	public String getMessage() {
-		return "ì‚¬ìš©ìì˜ ì˜ˆì™¸ë©”ì‹œì§€:"+super.getMessage();
+		return "»ç¿ëÀÚÀÇ ¿¹¿Ü¸Ş½ÃÁö:"+super.getMessage();
 	}
 	@Override
 	public String toString() {
-		return "ì‚¬ìš©ìì˜ í´ë˜ìŠ¤ì˜ˆì™¸^^:"+super.toString();
+		return "»ç¿ëÀÚÀÇ Å¬·¡½º¿¹¿Ü^^:"+super.toString();
 	}
 	
 }
 class Account{
-	// ì´ì”ì•¡
+	// ÃÑÀÜ¾×
 	private long balance;
 	public Account() {
 	}
 	public long getBalance() {
 		return balance;
 	}
-	public void deposit(int money){ // ì…ê¸ˆ
+	public void deposit(int money){ // ÀÔ±İ
 		balance += money;
 	}
-	// ì¸ì¶œ
+	// ÀÎÃâ
 	public void withdraw(int money) throws UserDefException01{
-		// ì¸ì¶œê¸ˆì•¡ì´ í˜„ì¬ ì”ê³  ë³´ë‹¤ ë§ë‹¤ë©´ ì‚¬ìš©ì ì •ì˜ ì˜ˆì™¸ ë°œìƒ
+		// ÀÎÃâ±İ¾×ÀÌ ÇöÀç ÀÜ°í º¸´Ù ¸¹´Ù¸é »ç¿ëÀÚ Á¤ÀÇ ¿¹¿Ü ¹ß»ı
 		if(balance < money){
-			// ì‚¬ìš©ì ì •ì˜ ì˜ˆì™¸ ê°ì²´ ìƒì„±ì€ ê°•ì œì ìœ¼ë¡œ
-			// throw (ì •ì˜ê°ì²´) ì²˜ë¦¬ë¥¼ í•˜ì—¬ì•¼ í•œë‹¤.
-			throw new UserDefException01("ì”ê³ ë¶€ì¡±:"+(money-balance)
-						+" ëª¨ìëŒ");
+			// »ç¿ëÀÚ Á¤ÀÇ ¿¹¿Ü °´Ã¼ »ı¼ºÀº °­Á¦ÀûÀ¸·Î
+			// throw (Á¤ÀÇ°´Ã¼) Ã³¸®¸¦ ÇÏ¿©¾ß ÇÑ´Ù.
+			throw new UserDefException01("ÀÜ°íºÎÁ·:"+(money-balance)
+						+" ¸ğÀÚ¶÷");
 		}
 		balance -= money;
 	}
@@ -53,15 +53,15 @@ public class A06_userDefException {
 		try {
 			acc01.deposit(100000);
 			acc01.deposit(100000);
-			// ì˜ˆì™¸ ì²˜ë¦¬.
+			// ¿¹¿Ü Ã³¸®.
 			acc01.withdraw(50000);
-			acc01.withdraw(200000); // ì˜ˆì™¸ê°€ ë˜ì ¸ì§
+			acc01.withdraw(200000); // ¿¹¿Ü°¡ ´øÁ®Áü
 			
 			
 		} catch (UserDefException01 e) {
-			// ì •ì˜ëœ ì‚¬ìš©ì ì •ì˜ ë©”ì„œë“œ ì‚¬ìš©.
-			// getMessage()ì—ëŠ” ì •ì˜ëœ ë©”ì‹œì§€ë¥¼ í˜¸ì¶œí•˜ëŠ”ë°,
-			// ìƒì„±ìì˜ í†µí•´ì„œ ë„˜ê²¨ì§„ ë¬¸ìì—´ì„ ê°€ì ¸ì˜¨ë‹¤.
+			// Á¤ÀÇµÈ »ç¿ëÀÚ Á¤ÀÇ ¸Ş¼­µå »ç¿ë.
+			// getMessage()¿¡´Â Á¤ÀÇµÈ ¸Ş½ÃÁö¸¦ È£ÃâÇÏ´Âµ¥,
+			// »ı¼ºÀÚÀÇ ÅëÇØ¼­ ³Ñ°ÜÁø ¹®ÀÚ¿­À» °¡Á®¿Â´Ù.
 			System.out.println(e.getMessage());
 			System.out.println(e.toString());
 			// TODO Auto-generated catch block

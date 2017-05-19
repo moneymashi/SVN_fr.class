@@ -6,11 +6,11 @@ class Duck{
 		this.cc = cc;
 	}
 	void goColorWith(){
-		// ì¸í„°í˜ì´ìŠ¤ì— ì‹¤ì œ ê°ì²´ê°€ í• ë‹¹ ë˜ì—ˆì„ ë•Œ..
+		// ÀÎÅÍÆäÀÌ½º¿¡ ½ÇÁ¦ °´Ã¼°¡ ÇÒ´ç µÇ¾úÀ» ¶§..
 		if( cc!=null){
 			cc.showColor();
 		}
-		System.out.println(" ì˜¤ë¦¬ê°€ ì§€ë‚˜ê°„ë‹¤!!");
+		System.out.println(" ¿À¸®°¡ Áö³ª°£´Ù!!");
 	}
 }
 interface ChangeColor{
@@ -20,14 +20,14 @@ class WhiteColor implements ChangeColor{
 	@Override
 	public void showColor() {
 		// TODO Auto-generated method stub
-		System.out.print("í°ìƒ‰");
+		System.out.print("Èò»ö");
 	}	
 }
 class YellowColor implements ChangeColor{
 	@Override
 	public void showColor() {
 		// TODO Auto-generated method stub
-		System.out.print("ë…¸ë‘ìƒ‰");
+		System.out.print("³ë¶û»ö");
 	}	
 }
 public class A13_interfaceExp {

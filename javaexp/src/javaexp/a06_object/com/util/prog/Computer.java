@@ -3,14 +3,14 @@ package javaexp.a06_object.com.util.prog;
 import javaexp.a06_object.com.util.Pen;
 
 public class Computer {
-//	ë‹¤ë¥¸ packageì— ìˆëŠ” í´ë˜ìŠ¤ë¥¼ í˜¸ì¶œí•  ë•Œ..
-//	1) packageëª….í´ë˜ìŠ¤ëª…ìœ¼ë¡œ ì„ ì–¸í•´ì•¼ í•œë‹¤.
+//	´Ù¸¥ package¿¡ ÀÖ´Â Å¬·¡½º¸¦ È£ÃâÇÒ ¶§..
+//	1) package¸í.Å¬·¡½º¸íÀ¸·Î ¼±¾ğÇØ¾ß ÇÑ´Ù.
 	javaexp.a06_object.com.util.Note 
 		note01 = new javaexp.a06_object.com.util.Note();
-//	2) ì‚¬ìš©í•˜ê³ ì í•˜ëŠ” packageëª….í´ë˜ìŠ¤ëª… importí•˜ì—¬ í™œìš©í•  ìˆ˜ ìˆë‹¤.
+//	2) »ç¿ëÇÏ°íÀÚ ÇÏ´Â package¸í.Å¬·¡½º¸í importÇÏ¿© È°¿ëÇÒ ¼ö ÀÖ´Ù.
 	Pen p = new Pen();
-//	** íŒ¨í‚¤ì§€ë¼ë¦¬ ì ‘ê·¼ì´ ê°€ëŠ¥í• ë ¤ë©´ classì„ ì–¸ì‹œ,
-//	@@@ class í´ë˜ìŠ¤ëª…
-//	1) ê°™ì€ packageì¼ë•Œ, @@@ì— ì œì–´ìê°€ ì—†ê±°ë‚˜ public
-//	2) ë‹¤ë¥¸ packageì¼ë•ŒëŠ” @@@ì— publicì´ ì„ ì–¸ë˜ì–´ì•¼ í•œë‹¤.
+//	** ÆĞÅ°Áö³¢¸® Á¢±ÙÀÌ °¡´ÉÇÒ·Á¸é class¼±¾ğ½Ã,
+//	@@@ class Å¬·¡½º¸í
+//	1) °°Àº packageÀÏ¶§, @@@¿¡ Á¦¾îÀÚ°¡ ¾ø°Å³ª public
+//	2) ´Ù¸¥ packageÀÏ¶§´Â @@@¿¡ publicÀÌ ¼±¾ğµÇ¾î¾ß ÇÑ´Ù.
 }

@@ -4,7 +4,7 @@ public class A02_equal_Logic {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-/* ë¹„êµ ì—°ì‚°ì*/
+/* ºñ±³ ¿¬»êÀÚ*/
 		int point = 75;
 		int passTarget = 60;
 		System.out.println(point + "=="+passTarget+"?"+(point==passTarget));
@@ -12,15 +12,15 @@ public class A02_equal_Logic {
 		System.out.println(point + "<"+passTarget+"?"+(point<passTarget));
 		System.out.println(point + ">="+passTarget+"?"+(point>=passTarget));
 		System.out.println(point + "<="+passTarget+"?"+(point<=passTarget));
-		// != ê°™ì§€ ì•Šì„ ë•Œ..
+		// != °°Áö ¾ÊÀ» ¶§..
 		System.out.println(point + "!="+passTarget+"?"+(point!=passTarget));
-/* ë…¼ë¦¬ ì—°ì‚°ì*/
-//		&&(and) : ë‘ê°€ì§€ ë…¼ë¦¬ì¡°ê±´ì— ë‹¤ í•©ì¹˜ë  ë•Œ, true
-//		||(or)  : ë‘ê°€ì§€ ë…¼ë¦¬ì¡°ê±´ ì¤‘ í•˜ë‚˜ë§Œì´ë¼ë„ í•©ì¹˜ë  ë•Œ, true
+/* ³í¸® ¿¬»êÀÚ*/
+//		&&(and) : µÎ°¡Áö ³í¸®Á¶°Ç¿¡ ´Ù ÇÕÄ¡µÉ ¶§, true
+//		||(or)  : µÎ°¡Áö ³í¸®Á¶°Ç Áß ÇÏ³ª¸¸ÀÌ¶óµµ ÇÕÄ¡µÉ ¶§, true
 		int getPoint= 85;
-		System.out.println("íšë“í•œ ì ìˆ˜ê°€ 80ì´ìƒ 90ë¯¸ë§Œ?"+
+		System.out.println("È¹µæÇÑ Á¡¼ö°¡ 80ÀÌ»ó 90¹Ì¸¸?"+
 				( (getPoint>=80)  &&   (getPoint<90)   )  );
-		System.out.println("ì ìˆ˜ê°€ ìœ íš¨í•˜ì§€ ì•Šì„ ì¡°ê±´(0ë¯¸ë§Œ,100ì´ˆê³¼)?" +
+		System.out.println("Á¡¼ö°¡ À¯È¿ÇÏÁö ¾ÊÀ» Á¶°Ç(0¹Ì¸¸,100ÃÊ°ú)?" +
 				 ( (getPoint<0) || (getPoint>100) )      );
 	}
 

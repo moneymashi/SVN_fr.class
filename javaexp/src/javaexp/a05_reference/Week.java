@@ -1,7 +1,7 @@
 package javaexp.a05_reference;
 
 public enum Week {
-	// enumì˜ ìƒìˆ˜ëŠ” ëŒ€ë¬¸ìë¡œ ì„ ì–¸í•œë‹¤.
+	// enumÀÇ »ó¼ö´Â ´ë¹®ÀÚ·Î ¼±¾ğÇÑ´Ù.
 	MONDAY,
 	TUESDAY,
 	WEDNESDAY,

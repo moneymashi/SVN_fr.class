@@ -4,30 +4,30 @@ public class A05_doubleFor {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-/*	êµ¬êµ¬ë‹¨ì„ í†µí•œ 2ì¤‘ forë¬¸ ì²˜ë¦¬
+/*	±¸±¸´ÜÀ» ÅëÇÑ 2Áß for¹® Ã³¸®
  * */		
-		// ì™¸ë¶€ëŠ” ë‹¨ìˆ˜ì— ê´€ë ¨ëœ ë‚´ìš© ì²˜ë¦¬..
+		// ¿ÜºÎ´Â ´Ü¼ö¿¡ °ü·ÃµÈ ³»¿ë Ã³¸®..
 		for(int grade=2;grade<=9;grade++){
-			// ë‚´ë¶€ëŠ” cnt 1~9 ì—°ì‚° ì²˜ë¦¬
-			System.out.println("###"+grade+"ë‹¨ ###");
+			// ³»ºÎ´Â cnt 1~9 ¿¬»ê Ã³¸®
+			System.out.println("###"+grade+"´Ü ###");
 			for(int cnt=1;cnt<=9;cnt++){
 				System.out.println(grade + " * "+ cnt + " = "+ (grade*cnt));
 			}
 		}
-/* ë¼ì¸ë³„ í”„ë¡œì„¸ìŠ¤ê°€ ì²˜ë¦¬ëœë‹¤.. 
+/* ¶óÀÎº° ÇÁ·Î¼¼½º°¡ Ã³¸®µÈ´Ù.. 
  */	
-		// ì™¸ë¶€ëŠ” cnt 1~9 ì—°ì‚° ì²˜ë¦¬ 
+		// ¿ÜºÎ´Â cnt 1~9 ¿¬»ê Ã³¸® 
 		for(int cnt=0;cnt<=9;cnt++){
-			// ë‚´ë¶€ëŠ” ë‹¨ìˆ˜ì— ê´€ë ¨ëœ ë‚´ìš© ì²˜ë¦¬..
+			// ³»ºÎ´Â ´Ü¼ö¿¡ °ü·ÃµÈ ³»¿ë Ã³¸®..
 			for(int grade=2;grade<=9;grade++){
-				// ì´ˆê¸° @@ ë‹¨ title ì²˜ë¦¬
+				// ÃÊ±â @@ ´Ü title Ã³¸®
 				if(cnt==0){
-					System.out.print("   "+grade+"ë‹¨\t\t");
+					System.out.print("   "+grade+"´Ü\t\t");
 				}else{
 					System.out.print(grade + " * "+ cnt + " = "+ (grade*cnt)+"\t");
 				}
 			}
-			// ì¤„ë°”ê¿ˆ ì²˜ë¦¬..
+			// ÁÙ¹Ù²Ş Ã³¸®..
 			System.out.println();
 		}		
 	}

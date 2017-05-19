@@ -3,39 +3,39 @@ package javaexp.a07_inheritance;
 class Mz01{
 	Flyway f;
 	void attack(){
-		System.out.println("ê³µê²©ì„ í•˜ë©´ì„œ ì§€êµ¬ë¥¼ ì§€í‚¤ë‹¤!!");
+		System.out.println("°ø°İÀ» ÇÏ¸é¼­ Áö±¸¸¦ ÁöÅ°´Ù!!");
 	}
 	void setFlying(Flyway wing){
 		this.f = wing;
 	}
 	void flytoTheSky(){
-		System.out.print("ë§ˆì§•ê°€ê°€ ~~ ");
+		System.out.print("¸¶Â¡°¡°¡ ~~ ");
 		if(f!=null){
 			f.fly();
 		}else{
-			System.out.println("ë‚ ê°œê°€ ì¥ì°© ë˜ì§€ ì•ŠìŒ!!");
+			System.out.println("³¯°³°¡ ÀåÂø µÇÁö ¾ÊÀ½!!");
 		}
 	}
 }
 interface Flyway{
 	void fly();
 }
-// ì¸í„°í˜ì´ìŠ¤ë¥¼ ìƒì† ë°›ì€ ì‹¤ì œ í´ë˜ìŠ¤ ì •ì˜
-// ì¸í„°í˜ì´ìŠ¤ëŠ” implementsë¥¼ í†µí•´ì„œ ìƒì† ë°›ëŠ”ë‹¤!!
+// ÀÎÅÍÆäÀÌ½º¸¦ »ó¼Ó ¹ŞÀº ½ÇÁ¦ Å¬·¡½º Á¤ÀÇ
+// ÀÎÅÍÆäÀÌ½º´Â implements¸¦ ÅëÇØ¼­ »ó¼Ó ¹Ş´Â´Ù!!
 // Flyway f01 = new Wing01();
 // f01.fly();
 class Wing01 implements Flyway{
 	@Override
 	public void fly() {
 		// TODO Auto-generated method stub
-		System.out.println(" ë™ë„¤ë¥¼ ë‚˜ë¥´ë‹¤!![ì²˜ìŒìœ¼ë¡œ í•˜ëŠ˜ì„~~]");		
+		System.out.println(" µ¿³×¸¦ ³ª¸£´Ù!![Ã³À½À¸·Î ÇÏ´ÃÀ»~~]");		
 	}	
 }
 class Wing02 implements Flyway{
 	@Override
 	public void fly() {
 		// TODO Auto-generated method stub
-		System.out.println(" ìš°ë¦¬ë‚˜ë¼ ì „ì—­ì„ ë‚˜ë¥´ë‹¤.");		
+		System.out.println(" ¿ì¸®³ª¶ó Àü¿ªÀ» ³ª¸£´Ù.");		
 	}	
 }
 public class A12_interface {
@@ -44,7 +44,7 @@ public class A12_interface {
 		// TODO Auto-generated method stub
 		Mz01 m01 = new Mz01();
 		Wing01 w01 = new Wing01();
-		// ë‚ ê°œë¥¼ ì¥ì°©í•¨..
+		// ³¯°³¸¦ ÀåÂøÇÔ..
 		// void setFlying(Flyway wing){
 		// 	Flyway wing = w01;   
 		//  Flyway wing = new Wing01();

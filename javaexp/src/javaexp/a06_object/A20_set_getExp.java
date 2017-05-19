@@ -5,32 +5,32 @@ class QuickBoard{
 	private int curVelocity;
 	public QuickBoard(String rider) {
 		this.rider = rider;
-		System.out.println(rider+"ê°€ í€µë³´ë“œë¥¼ íƒ€ì„œ");
+		System.out.println(rider+"°¡ Äüº¸µå¸¦ Å¸¼­");
 	}
 	public void speedUp(){
-		System.out.println("ì†ë„ë¥¼ ì˜¬ë¦½ë‹ˆë‹¤.");
+		System.out.println("¼Óµµ¸¦ ¿Ã¸³´Ï´Ù.");
 		curVelocity++;
 		if(curVelocity>20){
-			System.out.println("ì œí•œ ì†ë„ 20(km/h)ì…ë‹ˆë‹¤.");
+			System.out.println("Á¦ÇÑ ¼Óµµ 20(km/h)ÀÔ´Ï´Ù.");
 			curVelocity=20;
 		}
-		System.out.println("í˜„ì¬ ì†ë„ "+curVelocity+"(km/h)");
+		System.out.println("ÇöÀç ¼Óµµ "+curVelocity+"(km/h)");
 	}
 	public void speedDown(){
-		System.out.println("ì†ë„ë¥¼ ë‚´ë¦½ë‹ˆë‹¤.");
+		System.out.println("¼Óµµ¸¦ ³»¸³´Ï´Ù.");
 		curVelocity--;
 		if(curVelocity<0){
-			System.out.println("í˜„ì¬ ë©ˆì¶° ìˆìŠµë‹ˆë‹¤.");
+			System.out.println("ÇöÀç ¸ØÃç ÀÖ½À´Ï´Ù.");
 			curVelocity=0;
 		}
-		System.out.println("í˜„ì¬ ì†ë„ "+curVelocity+"(km/h)");
+		System.out.println("ÇöÀç ¼Óµµ "+curVelocity+"(km/h)");
 	}	
 }
 public class A20_set_getExp {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		QuickBoard b01 = new QuickBoard("ê¹€ì² ìˆ˜");
+		QuickBoard b01 = new QuickBoard("±èÃ¶¼ö");
 		for(int cnt=0;cnt<=22;cnt++)
 		b01.speedUp();
 		for(int cnt=0;cnt<=22;cnt++)

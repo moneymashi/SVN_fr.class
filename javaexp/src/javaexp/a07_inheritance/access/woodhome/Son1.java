@@ -4,11 +4,11 @@ public class Son1 extends WoodCutter {
 	void whatWoodCutterInfo(){
 		// public
 		System.out.println(weddingAnn);
-		// default(ê°™ì€ íŒ¨í‚¤ì§€)
+		// default(°°Àº ÆĞÅ°Áö)
 		System.out.println(savingMoney);
-		// protected ê°€ëŠ¥..
+		// protected °¡´É..
 		System.out.println(cacheInheri);
-		// private(X) :ìƒì†ê´€ê³„ì—ì„œë„ ì ‘ê·¼ì´ ì•ˆëœë‹¤..
+		// private(X) :»ó¼Ó°ü°è¿¡¼­µµ Á¢±ÙÀÌ ¾ÈµÈ´Ù..
 //		System.out.println(privSect);
 	}
 }

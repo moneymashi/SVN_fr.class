@@ -2,14 +2,14 @@ package javaexp.a06_object;
 
 class GoMountain{
 	
-	// String ...names ê°€ë³€ ì…ë ¥ê°’ ì„ ì–¸..
-	// í˜¸ì¶œí•˜ëŠ” ê³³ì—ì„œ ì—¬ëŸ¬ ê°œì˜ ì…ë ¥ê°’ì„
-	// ê°€ë³€ì ìœ¼ë¡œ ì…ë ¥ì´ ê°€ëŠ¥í•˜ë„ë¡ ì²˜ë¦¬
+	// String ...names °¡º¯ ÀÔ·Â°ª ¼±¾ğ..
+	// È£ÃâÇÏ´Â °÷¿¡¼­ ¿©·¯ °³ÀÇ ÀÔ·Â°ªÀ»
+	// °¡º¯ÀûÀ¸·Î ÀÔ·ÂÀÌ °¡´ÉÇÏµµ·Ï Ã³¸®
 	public void callName(String ...names){
-		// namesëŠ” ë°°ì—´
+		// names´Â ¹è¿­
 		for(String name:names){
-			// ë¶€ë¥¸ì´ë¦„..!!
-			System.out.println(name+"~~~ ì˜ ìˆëŠ”ì§€?");
+			// ºÎ¸¥ÀÌ¸§..!!
+			System.out.println(name+"~~~ Àß ÀÖ´ÂÁö?");
 		}
 	}
 }
@@ -19,12 +19,12 @@ public class A16_variableMethod {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		GoMountain m1 = new GoMountain();
-		System.out.println("ì‚°ì— ê°€ì„œ ë¶€ë¥¸ ì´ë¦„!!");
-		m1.callName("í™ê¸¸ë™");
-		System.out.println("ì‚°ì— ê°€ì„œ ë¶€ë¥¸ ì´ë¦„!!");
-		m1.callName("ê¹€ê¸¸ë™","ì‹ ê¸¸ë™");
-		System.out.println("ì‚°ì— ê°€ì„œ ë¶€ë¥¸ ì´ë¦„!!");
-		m1.callName("ì˜¤ì² ìˆ˜","ê¹€ì˜í¬","ì‹ êµ­ì£¼");
+		System.out.println("»ê¿¡ °¡¼­ ºÎ¸¥ ÀÌ¸§!!");
+		m1.callName("È«±æµ¿");
+		System.out.println("»ê¿¡ °¡¼­ ºÎ¸¥ ÀÌ¸§!!");
+		m1.callName("±è±æµ¿","½Å±æµ¿");
+		System.out.println("»ê¿¡ °¡¼­ ºÎ¸¥ ÀÌ¸§!!");
+		m1.callName("¿ÀÃ¶¼ö","±è¿µÈñ","½Å±¹ÁÖ");
 	
 		
 	}

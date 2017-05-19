@@ -20,42 +20,42 @@ class Vehicle{
 		if(curSpeed>maxSpeed){
 			curSpeed=maxSpeed;
 		}
-		System.out.println("ì†ë„ê°€ ì¦ê°€ë˜ì–´ í˜„ì¬ ì†ë„:"+curSpeed);
+		System.out.println("¼Óµµ°¡ Áõ°¡µÇ¾î ÇöÀç ¼Óµµ:"+curSpeed);
 	}
 	public void driver(){
-		System.out.println(kind+"ê°€ ìš´í–‰ì„ í•©ë‹ˆë‹¤!");
+		System.out.println(kind+"°¡ ¿îÇàÀ» ÇÕ´Ï´Ù!");
 	}
 }
 class Bus extends Vehicle{
 	Bus(){
-		super("ë²„ìŠ¤",100);
+		super("¹ö½º",100);
 	}
-	// ì¬ì •ì˜
+	// ÀçÁ¤ÀÇ
 	void speedUp(){
 		curSpeed+=10;
 		if(curSpeed>maxSpeed){
 			curSpeed=maxSpeed;
 		}
-		System.out.println("ì†ë„ê°€ ì¦ê°€ë˜ì–´ í˜„ì¬ ì†ë„:"+curSpeed);
+		System.out.println("¼Óµµ°¡ Áõ°¡µÇ¾î ÇöÀç ¼Óµµ:"+curSpeed);
 	}	
-	// ì¬ì •ì˜
+	// ÀçÁ¤ÀÇ
 	public void driver(){
-		System.out.println(kind+"ê°€ ë§ì€ ìŠ¹ê°ìœ¼ë¡œ íƒœìš°ê³  ìš´í–‰ì„ í•©ë‹ˆë‹¤!");
+		System.out.println(kind+"°¡ ¸¹Àº ½Â°´À¸·Î ÅÂ¿ì°í ¿îÇàÀ» ÇÕ´Ï´Ù!");
 	}		
 }
 class Ship extends Vehicle{
 	Ship(){
-		super("ë°°",60);
+		super("¹è",60);
 	}
 	void speedUp(){
 		curSpeed+=3;
 		if(curSpeed>maxSpeed){
 			curSpeed=maxSpeed;
 		}
-		System.out.println("ì†ë„ê°€ ì¦ê°€ë˜ì–´ í˜„ì¬ ì†ë„:"+curSpeed);
+		System.out.println("¼Óµµ°¡ Áõ°¡µÇ¾î ÇöÀç ¼Óµµ:"+curSpeed);
 	}	
 	public void driver(){
-		System.out.println(kind+"ê°€ ë§ì€ ìŠ¹ê°ìœ¼ë¡œ íƒœìš°ê³  ë¬¼ ìœ„ë¥¼ ìš´í–‰í•©ë‹ˆë‹¤!!");
+		System.out.println(kind+"°¡ ¸¹Àº ½Â°´À¸·Î ÅÂ¿ì°í ¹° À§¸¦ ¿îÇàÇÕ´Ï´Ù!!");
 	}		
 }
 public class A08_PolyMorphismExp {
@@ -72,7 +72,7 @@ public class A08_PolyMorphismExp {
 		v2.speedUp();
 		v2.speedUp();
 		v2.driver();
-		// ìƒìœ„ type [] ë³€ìˆ˜ = {í•˜ìœ„ ê°ì²´1(),í•˜ìœ„ ê°ì²´2(), í•˜ìœ„ ê°ì²´3() }
+		// »óÀ§ type [] º¯¼ö = {ÇÏÀ§ °´Ã¼1(),ÇÏÀ§ °´Ã¼2(), ÇÏÀ§ °´Ã¼3() }
 		Vehicle []veArray={new Bus(),new Bus(), new Ship(), new Ship()};
 		for(Vehicle v:veArray){
 			v.speedUp();
