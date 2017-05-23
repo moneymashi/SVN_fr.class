@@ -32,7 +32,7 @@ public class A03_MVC extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
-		request.setAttribute("prod01", new Product("»ç°ú",3000,2));
+		request.setAttribute("prod01", new Product("ì‚¬ê³¼",3000,2));
 		String jspPage="/c01_mvc/a03_mvc.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(jspPage);
 		rd.forward(request, response);

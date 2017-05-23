@@ -29,15 +29,15 @@ public class A04_MVC extends HttpServlet {
 		// TODO Auto-generated method stub
 		// urlPatterns = { "/mvc04" }
 		// http://localhost:6080/jspexp/mvc04?num01=77&num02=55&name=himan
-		// 1. ¿äÃ»°ª..
+		// 1. ìš”ì²­ê°’..
 		String num01= request.getParameter("num01");
 		String num02= request.getParameter("num02");
 		String name= request.getParameter("name");
-		// 2. model(ºñÁö´Ï½º·ÎÁ÷) 
+		// 2. model(ë¹„ì§€ë‹ˆìŠ¤ë¡œì§) 
 		int sum=Integer.parseInt(num01)+Integer.parseInt(num02);
 		System.out.println(num01+" + "+num02 + " = "+ sum);
-		System.out.println("mvc04 È£Ãâ!!num01:"+num01);
-		System.out.println("mvc04 È£Ãâ!!name:"+name);
+		System.out.println("mvc04 í˜¸ì¶œ!!num01:"+num01);
+		System.out.println("mvc04 í˜¸ì¶œ!!name:"+name);
 		
 		
 	}
