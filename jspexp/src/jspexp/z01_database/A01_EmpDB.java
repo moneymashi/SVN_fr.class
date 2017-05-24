@@ -33,6 +33,7 @@ public class A01_EmpDB {
 	}
 	// emp 테이블에 select * from emp통해서 가져오는 데이터를
 	// ArrayList<Emp>로 가져옮
+	// new A01_EmpDB().empList()
 	public ArrayList<Emp> empList(){
 		ArrayList<Emp> list = new ArrayList<Emp>();
 //		1. 연결
@@ -161,6 +162,7 @@ public class A01_EmpDB {
 		return list;
 	}
 	// 검색 메서드
+	// 
 	public ArrayList<Emp> searchPre(Emp sch){
 		ArrayList<Emp> list = new ArrayList<Emp>();
 		try {
@@ -217,6 +219,61 @@ public class A01_EmpDB {
 		}
 		return list;
 	}
+	// 1개 검색 메서드   A01_EmpDB.getEmp(Emp sch)
+	public Emp getEmp(Emp sch){
+		Emp emp=null; 
+		try {
+			setConn();
+
+			String sql="SELECT * \n"
+					+ "FROM EMP  \n" 
+					+ "WHERE empno =? \n"
+					+ "AND ename =? \n";
+			
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1, sch.getEmpno());
+			pstmt.setString(2, sch.getEname());
+			
+			rs = pstmt.executeQuery();
+			// 단위 객체 선언
+			if( rs.next() ){
+				emp = new Emp();
+				emp.setEmpno(rs.getInt("empno"));
+				emp.setEname(rs.getString("ename"));
+				emp.setJob(rs.getString("job"));
+				emp.setMgr(rs.getInt("mgr"));
+				emp.setHiredate(rs.getDate("hiredate"));
+				emp.setSal(rs.getDouble("sal"));
+				emp.setComm(rs.getDouble("comm"));
+				emp.setDeptno(rs.getInt("deptno"));
+			}
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			// 수정,삭제, 등록  rollback()
+			e.printStackTrace();
+		}finally{
+			// 자원 해제
+			try {
+				if(rs!=null){
+					// ResultSet가 현재 메모리에 할당 되어 있다면.
+					rs.close();
+				}
+				if(pstmt!=null){
+					pstmt.close();
+				}	
+				if(con!=null){
+					con.close();
+				}				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return emp;
+	}	
 	// 1개검색 메서드
 	public Emp oneEmp(int empno){
 		Emp emp=null; 
