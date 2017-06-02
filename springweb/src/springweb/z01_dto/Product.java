@@ -3,6 +3,9 @@ package springweb.z01_dto;
 public class Product {
 	private String pname;
 	private int price;
+	private int cnt;
+	private int tot;
+	
 	public Product() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -23,6 +26,18 @@ public class Product {
 	}
 	public void setPrice(int price) {
 		this.price = price;
+	}
+	public int getCnt() {
+		return cnt;
+	}
+	public void setCnt(int cnt) {
+		this.cnt = cnt;
+	}
+	public int getTot() {
+		return tot;
+	}
+	public void setTot(int tot) {
+		this.tot = tot;
 	}
 	
 }

@@ -14,7 +14,8 @@ public class A06_GenericXml {
 			ctx = new GenericXmlApplicationContext("springweb/b01_di/diexp06.xml");
 		Person p01=ctx.getBean("p01", Person.class);
 		System.out.println(p01.getName()+":"+p01.getAge());
-		Product prd01=ctx.getBean("prd01", Product.class);
+		Product prd01
+		=ctx.getBean("prd01", Product.class);
 		System.out.println(prd01.getPname()+":"+prd01.getPrice());
 
 		

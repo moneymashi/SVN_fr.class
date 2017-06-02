@@ -4,6 +4,7 @@ public class Exam {
 	private int num01;
 	private int num02;
 	private int inputdata;
+	private String result;
 	public int getNum01() {
 		return num01;
 	}
@@ -21,6 +22,12 @@ public class Exam {
 	}
 	public void setInputdata(int inputdata) {
 		this.inputdata = inputdata;
+	}
+	public String getResult() {
+		return result;
+	}
+	public void setResult(String result) {
+		this.result = result;
 	}
 
 	
