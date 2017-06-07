@@ -24,7 +24,7 @@ public class A04_ModelAttriCtrl {
 		ex.setNum01((int)(Math.random()*9)+1);
 		ex.setNum02((int)(Math.random()*9)+1);
 		
-		return "a01_basic/a20_calModel.jsp";
+		return "a01_basic/a20_calModel";
 	}
 	@RequestMapping(method=RequestMethod.POST)
 	public String call(
@@ -41,7 +41,7 @@ public class A04_ModelAttriCtrl {
 		ex.setNum02((int)(Math.random()*9)+1);		
 		
 		
-		return "a01_basic/a20_calModel.jsp";
+		return "a01_basic/a20_calModel";
 	}
 
 }

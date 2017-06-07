@@ -4,6 +4,10 @@ public class Schedule {
 	private String time;
 	private String content;
 	
+	
+	
+	public Schedule() {
+	}
 	public Schedule(String time, String content) {
 		this.time = time;
 		this.content = content;

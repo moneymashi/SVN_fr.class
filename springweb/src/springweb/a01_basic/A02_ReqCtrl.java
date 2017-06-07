@@ -30,13 +30,13 @@ public class A02_ReqCtrl {
 			System.out.println("요청값2:"+greet02);
 			System.out.println("요청값3(숫자):"+callNum01);
 		
-		return "a01_basic/a10_calling.jsp";//화면단 호출..
+		return "a01_basic/a10_calling";//화면단 호출..
 	}
 	// 물건 구매 초기 화면 호출..
 //	http://localhost:6080/springweb/buyForm.do
 	@RequestMapping("/buyForm.do")
 	public String buyForm(){
-		return "a01_basic/a11_buyForm.jsp";
+		return "a01_basic/a11_buyForm";
 	}
 	// pname=사과&price=2
 	@RequestMapping(value="/reqBuy.do")
@@ -58,18 +58,18 @@ public class A02_ReqCtrl {
 			d.addAttribute("showinfo",msg);
 		}
 		
-		return "a01_basic/a12_buyList.jsp";
+		return "a01_basic/a12_buyList";
 	}
 	// 요청 방식 처리
 	// 1. get방식 주로 초기 화면 로딩시, 처리..
 //	http://localhost:6080/springweb/calling.do
 	@RequestMapping(value="/calling.do", method=RequestMethod.GET)
 	public String methodExp(){
-		return "/a01_basic/a13_getForm.jsp";
+		return "/a01_basic/a13_getForm";
 	}
 	@RequestMapping(value="/calling.do", method=RequestMethod.POST)
 	public String methodExp2(){
-		return "/a01_basic/a14_postResult.jsp";
+		return "/a01_basic/a14_postResult";
 	}	
 	
 	

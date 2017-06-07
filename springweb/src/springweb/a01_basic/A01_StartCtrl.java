@@ -21,7 +21,7 @@ public class A01_StartCtrl {
 //		1. 요청값..
 //		2. business login 처리 (service를 통해서 model)
 //		3. view단 호출..
-		return "a01_basic/a01_start.jsp"; //화면단 호출..
+		return "a01_basic/a01_start"; //화면단 호출..
 	}
 	// http://localhost:6080/springweb/sendForw.do?id=himan&pass=7777
 	@RequestMapping("/sendForw.do")
@@ -33,20 +33,20 @@ public class A01_StartCtrl {
 		d.addAttribute("msg", "id "+mem.getId()+" 이고, password "+
 				mem.getPass()+" 입니다!!");
 		// view단 : ${msg}
-		return "a01_basic/a02_send.jsp";
+		return "a01_basic/a02_send";
 	}
 	// 로그인 초기 화면..http://localhost:6080/springweb/login.do
 	@RequestMapping("/login.do")
 	public String login(){
-		return "a01_basic/a03_login.jsp";
+		return "a01_basic/a03_login";
 	}
 	// 로그인 체크 처리  http://localhost:6080/springweb/loginck.do
 	@RequestMapping("/loginck.do")
 	public String loginck(Member mem, Model d){
-		String page="a03_login.jsp";
+		String page="a03_login";
 		d.addAttribute("msg", mem.getId()+"는 인증된 아이디가 아닙니다!");
 		if(mem.getId().equals("himan")&&mem.getPass().equals("7777")){
-			page="a04_login_succ.jsp";
+			page="a04_login_succ";
 			d.addAttribute("msg", mem.getId()+"님 어서오세요!!");
 		}
 		return "a01_basic/"+page;
@@ -58,15 +58,15 @@ public class A01_StartCtrl {
 		mem.setNum02((int)(Math.random()*10));
 		d.addAttribute("exam", mem);
 		
-		return "a01_basic/a05_exam.jsp";
+		return "a01_basic/a05_exam";
 	}
 	// 로그인 체크 처리  http://localhost:6080/springweb/examck.do
 	@RequestMapping("/examck.do")
 	public String examck(Exam mem, Model d){
-		String page="a05_exam.jsp";
+		String page="a05_exam";
 		d.addAttribute("msg", "오답입니다.");
 		if((mem.getNum01()+mem.getNum02())==mem.getInputdata()){
-			page="a06_pass.jsp";
+			page="a06_pass";
 			d.addAttribute("msg","pass");
 		}
 		return "a01_basic/"+page;
