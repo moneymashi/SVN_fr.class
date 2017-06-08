@@ -9,15 +9,13 @@
        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context-4.0.xsd" >
-	<bean id="p01" 
-	class="springweb.z01_dto.Person"
-		p:name="홍길동" p:age="25"/>
-	<!-- Person p01 = new Person(); -->	
-		
-	<bean id="prd01" class="springweb.z01_dto.Product" 
-		c:pname="사과" c:price="3000" />	
-	<!-- 
-		Product prd01 = new Product(
-	 -->	
+	<context:annotation-config/>
+	<bean id="food01" class="springweb.z01_dto.Food"
+		p:menu ="짜장면" p:price="4000"
+	/>
+	<bean id="res01" class="springweb.z01_dto.Restaurant"
+		c:name = "청강성"
+	/>
+
 
 </beans>

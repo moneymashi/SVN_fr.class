@@ -9,15 +9,11 @@
        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context-4.0.xsd" >
-	<bean id="p01" 
-	class="springweb.z01_dto.Person"
-		p:name="홍길동" p:age="25"/>
-	<!-- Person p01 = new Person(); -->	
+
+	<bean id="product" class="springweb.z01_dto.Product" 
+		p:pname="사과" p:price="3000" p:cnt="3" />
+	<bean id="mart" class="springweb.z01_dto.Mart" 
+		p:name="기쁨"  autowire="byName" />	
 		
-	<bean id="prd01" class="springweb.z01_dto.Product" 
-		c:pname="사과" c:price="3000" />	
-	<!-- 
-		Product prd01 = new Product(
-	 -->	
 
 </beans>

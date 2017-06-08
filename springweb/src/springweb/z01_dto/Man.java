@@ -8,6 +8,7 @@ public class Man {
 	public Woman getWoman() {
 		return woman;
 	}
+//	autowire 속성에 bean의 id가 woman이 있을 때 할당..
 	public void setWoman(Woman woman) {
 		this.woman = woman;
 	}
@@ -30,6 +31,7 @@ public class Man {
 			System.out.println("그녀는 !!!!");
 			System.out.println("이름:"+woman.getName());
 			System.out.println("나이:"+woman.getAge());
+			System.out.println("사는곳:"+woman.getLoc());
 		}
 	}
 	

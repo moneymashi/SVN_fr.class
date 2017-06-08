@@ -19,7 +19,7 @@ public class Mart {
 	public void setProduct(Product product) {
 		this.product = product;
 	}
-	
+
 	public ArrayList<Product> getProductList() {
 		return productList;
 	}
@@ -33,10 +33,13 @@ public class Mart {
 			System.out.println(product.getPname()+", "+
 					product.getPrice()+"원으로 모십니다!!");
 		}
-		System.out.println("구매물건!!");
-		for(Product prod:productList){
-			System.out.print(prod.getPname()+"\t");
-			System.out.print(prod.getPrice()+"\n");
+		
+		if(productList!=null&&productList.size()>0){
+			System.out.println("구매물건!!");	
+			for(Product prod:productList){
+				System.out.print(prod.getPname()+"\t");
+				System.out.print(prod.getPrice()+"\n");
+			}
 		}
 		
 		

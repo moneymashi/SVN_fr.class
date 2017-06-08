@@ -1,6 +1,6 @@
 package springweb.z01_dto;
 import java.util.Date;
-// jspexp.z02_vo.Emp
+// springweb.z01_dto.Emp
 public class Emp {
 	private int empno;
 	private String ename;

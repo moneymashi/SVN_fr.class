@@ -3,6 +3,7 @@ package springweb.z01_dto;
 public class Woman {
 	private String name;
 	private int age;
+	private String loc;
 	
 	public Woman() {
 	}
@@ -12,8 +13,6 @@ public class Woman {
 		this.name = name;
 		this.age = age;
 	}
-
-
 
 	public String getName() {
 		return name;
@@ -26,6 +25,14 @@ public class Woman {
 	}
 	public void setAge(int age) {
 		this.age = age;
+	}
+
+	public String getLoc() {
+		return loc;
+	}
+
+	public void setLoc(String loc) {
+		this.loc = loc;
 	}
 	
 }
