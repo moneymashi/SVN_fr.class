@@ -7,7 +7,7 @@
 		<!-- mapper에 쓰이는 공통 dto나 vo에 대한 선언을 별칭(alias)
 			으로 쓰이게 했다.
 		 -->
-		<typeAlias alias="emp01" type="springweb.z01_dto.Emp"/>
+		<typeAlias alias="emp" type="springweb.z01_dto.Emp"/>
 		<typeAlias alias="dept" type="springweb.z01_dto.Dept"/>
 		
 	</typeAliases>

@@ -12,7 +12,12 @@
 		<script src="${path}/com/jquery-1.10.2.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
-				
+				$("tr").dblclick(function(){
+					//alert();
+					//alert($(this).children().html());
+					var empno=$(this).children().html();
+					$(location).attr("href","${path}/emp_my.do?empno="+empno);
+				});
 			})
 		</script>
 	</head>
@@ -22,9 +27,17 @@
 		이름:<input type="text" name="ename"/><br>
 		<input type="submit" value="검색"/>
 		</form>
-		<c:forEach var="emp" items="${emplist}">
-			<h3>${emp.ename}</h3>
-		</c:forEach>
+		<table width="70%" border>
+			<tr><th>사번</th><th>이름</th><th>입사일</th><th>급여</th></tr>
+			<c:forEach var="emp" items="${emplist}">			
+				<tr><td align="center">${emp.empno}</td><td>${emp.ename}</td>
+				<td><fmt:formatDate value="${emp.hiredate}"/></td>
+				<td align="right"><fmt:formatNumber value="${emp.sal}"/></td></tr>
+			</c:forEach>		
+		</table>
+
+
+
 		
 	</body>
 </html>

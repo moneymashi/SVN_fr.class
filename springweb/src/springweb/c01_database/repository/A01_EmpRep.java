@@ -1,6 +1,6 @@
 package springweb.c01_database.repository;
 
-import java.util.ArrayList;
+import java.util.ArrayList; 
 
 import org.springframework.stereotype.Repository;
 
@@ -16,4 +16,16 @@ public interface A01_EmpRep {
 //	데이터 결과 처리 ArrayList<VO>
 //	
 	public ArrayList<Emp> emplist(Emp sch);
+//	return : Emp  입력 : empno(int)
+//	id : empOne
+//	resultType="emp"
+//	parameterType="int"
+	public Emp empOne(int empno);
+/*  return : void   입력 : Emp
+ * 	id : empUpdate
+ *  parameterType: emp 
+ * */	
+	public void empUpdate(Emp upt);
+	
+	
 }
