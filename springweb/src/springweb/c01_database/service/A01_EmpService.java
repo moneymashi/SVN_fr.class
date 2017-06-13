@@ -6,9 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import springweb.c01_database.repository.A01_EmpRep;
-import springweb.c01_database.repository.A02_DeptDao;
-import springweb.z01_dto.Dept;
 import springweb.z01_dto.Emp;
+import springweb.z01_dto.EmpMulti;
 
 @Service
 public class A01_EmpService {
@@ -23,6 +22,10 @@ public class A01_EmpService {
 		}
 		return dao.emplist(sch);
 	}
+	public ArrayList<Emp> empList02(Emp sch){
+		return dao.empList02(sch);
+	}
+	
 	public Emp empOne(int empno){
 		// 비지니스 로직 처리..
 		return dao.empOne(empno);
@@ -31,4 +34,8 @@ public class A01_EmpService {
 		dao.empUpdate(upt);
 	}
 
+	public ArrayList<Emp> empMultiList(EmpMulti sch){
+		
+		return dao.empMultiList(sch);
+	}
 }

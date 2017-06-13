@@ -9,6 +9,7 @@
 		 -->
 		<typeAlias alias="emp" type="springweb.z01_dto.Emp"/>
 		<typeAlias alias="dept" type="springweb.z01_dto.Dept"/>
+		<typeAlias alias="empmulti" type="springweb.z01_dto.EmpMulti"/>
 		
 	</typeAliases>
 	<mappers>

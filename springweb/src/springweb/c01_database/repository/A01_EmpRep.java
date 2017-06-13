@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.springframework.stereotype.Repository;
 
 import springweb.z01_dto.Emp;
+import springweb.z01_dto.EmpMulti;
 
 @Repository
 public interface A01_EmpRep {
@@ -26,6 +27,15 @@ public interface A01_EmpRep {
  *  parameterType: emp 
  * */	
 	public void empUpdate(Emp upt);
+/*  ename, job이 있을 때에 정확한 값을 비교하여 데이터 로딩처리
+ * */	
+	public ArrayList<Emp> empList02(Emp sch);
+	
+// 급여에 따라 부서 로딩 동적 SQL
+	public ArrayList<Emp> empList03(Emp sch);
+	
+//	arraylist deptno 멀티 동적 데이터 처리..
+	public ArrayList<Emp> empMultiList(EmpMulti sch);
 	
 	
 }

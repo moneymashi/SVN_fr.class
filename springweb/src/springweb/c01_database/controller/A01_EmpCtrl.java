@@ -3,11 +3,13 @@ package springweb.c01_database.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import springweb.c01_database.service.A01_EmpService;
 import springweb.z01_dto.Emp;
+import springweb.z01_dto.EmpMulti;
 
 @Controller
 public class A01_EmpCtrl {
@@ -17,10 +19,10 @@ public class A01_EmpCtrl {
 	
 //	http://localhost:6080/springweb/emplist_my.do
 	@RequestMapping("/emplist_my.do")
-	public String empList(Emp sch, Model d){
-
-		
-		d.addAttribute("emplist", service.empList(sch));
+	public String empList(@ModelAttribute("emp") Emp sch, Model d){
+//		d.addAttribute("emplist", service.empList(sch));
+		// ename과 job이 있을 때만 검색..
+		d.addAttribute("emplist", service.empList02(sch));
 		
 		return "c01_database/a01_empList";
 	}
@@ -39,6 +41,14 @@ public class A01_EmpCtrl {
 		service.empUpdate(upt);
 		return "forward:/emp_my.do";
 	}
+
+	@RequestMapping("/mutiList_my.do")
+	public String multiList(@ModelAttribute("emp") EmpMulti sch, Model d){
+
+		d.addAttribute("emplist", service.empMultiList(sch));
+		
+		return "c01_database/a05_empMultiList";
+	}	
 	
 }
 

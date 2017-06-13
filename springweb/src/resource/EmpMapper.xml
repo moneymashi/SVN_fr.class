@@ -72,5 +72,51 @@
 			 deptno=#{deptno}
 		where empno=#{empno}		
 	</update>
+<!-- 검색 처리.. ename과 job이 있을 때에 해당 데이터가 정확히
+	있을 때 검색 처리..
+-->
+	<select id="empList02" parameterType="emp"
+		resultMap="empMap">
+		SELECT * 
+		FROM emp
+		WHERE 1=1
+		<!-- null 아니고 공백이 아닐 때.. -->
+		<if test="ename!=null and ename!='' ">
+			AND ename=#{ename}
+		</if>
+		<if test="job != null and job!='' ">
+			AND job=#{job}
+		</if>
+		
+	</select>	
+	<select id="empList03" parameterType="emp" 
+		resultMap="empMap">
+		SELECT * FROM EMP
+		WHERE 1=1
+		<choose>
+			<when test="sal>5000">AND deptno=10</when>		
+			<when test="sal>4000">AND deptno=20</when>		
+			<when test="sal>1000">AND deptno=30</when>		
+			<otherwise>AND deptno=40</otherwise>		
+		</choose>	
+	</select>
+	<select id="empMultiList" resultMap="empMap"
+		parameterType="empmulti">
+		SELECT * FROM EMP
+		WHERE 1=1
+		<if test="ename!=null and ename!='' ">
+			AND ename like '%'||#{ename}||'%'
+		</if>
+		<if test="job != null and job!='' ">
+			AND job like '%'|| #{job}||'%'
+		</if>
+		<if test="deptnos !=null">
+			AND deptno in
+			<foreach collection="deptnos" item="ckdeptno"
+				open="(" close=")" separator="," >
+				#{ckdeptno}	
+			</foreach>
+		</if>		
+	</select>
 	
 </mapper>
