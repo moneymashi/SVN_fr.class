@@ -1,5 +1,5 @@
 package springweb.d01_board.vo;
-
+// springweb.d01_board.vo.Board
 import java.util.Date;
 // data list ¸ðµ¨  Å¬·¡½º
 public class Board {

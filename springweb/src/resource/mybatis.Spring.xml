@@ -10,12 +10,17 @@
 		<typeAlias alias="emp" type="springweb.z01_dto.Emp"/>
 		<typeAlias alias="dept" type="springweb.z01_dto.Dept"/>
 		<typeAlias alias="empmulti" type="springweb.z01_dto.EmpMulti"/>
+		<typeAlias alias="board" type="springweb.d01_board.vo.Board"/>
+		<typeAlias alias="schboard" type="springweb.d01_board.vo.Board_Sch"/>
+		<typeAlias alias="quebank" type="springweb.d01_board.vo.Quebank"/>
 		
 	</typeAliases>
 	<mappers>
 		<!-- 모듈별로 sql을 지정해 높은 xml 파일 -->
 		<mapper resource="resource/EmpMapper.xml"/>
 		<mapper resource="resource/DeptMapper.xml"/>
+		<mapper resource="resource/BoardMapper.xml"/>
+		<mapper resource="resource/QuebankMapper.xml"/>
 		<!--  -->
 	</mappers>
 </configuration>

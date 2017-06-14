@@ -46,7 +46,7 @@
     -->  
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
     	<property name="basePackage" 
-    		value="springweb.c01_database.repository"/>
+    		value="springweb.c01_database.repository,springweb.d01_board.repository"/>
     		
     </bean>
      
