@@ -44,6 +44,7 @@
 		</table>
 		</form>
 		<table>
+		
 			<tr><th width="5%">번호</th><th width="50%">제목</th>
 				<th width="15%">작성자</th><th width="15%">작성일</th>
 				<th width="15%">조회수</th>
