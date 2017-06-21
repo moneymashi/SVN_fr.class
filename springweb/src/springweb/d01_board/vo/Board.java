@@ -3,6 +3,7 @@ package springweb.d01_board.vo;
 import java.util.Date;
 // data list ¸ðµ¨  Å¬·¡½º
 public class Board {
+	private int cnt;
 	private int no;
 	private int refno;
 	private String subject;
@@ -12,6 +13,13 @@ public class Board {
 	private int readcount;
 	private Date regdate;
 	private String email;
+	
+	public int getCnt() {
+		return cnt;
+	}
+	public void setCnt(int cnt) {
+		this.cnt = cnt;
+	}
 	public int getNo() {
 		return no;
 	}

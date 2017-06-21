@@ -1,6 +1,6 @@
 package springweb.c01_database.repository;
 
-import java.util.ArrayList; 
+import java.util.ArrayList;
 
 import org.springframework.stereotype.Repository;
 

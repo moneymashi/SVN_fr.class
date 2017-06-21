@@ -12,8 +12,7 @@ public class A07_GenericXml {
 		// TODO Auto-generated method stub
 		AbstractApplicationContext 
 			ctx = new GenericXmlApplicationContext("springweb/b01_di/diexp07_auto.xml");
-		Man ma
-		n=ctx.getBean("man", Man.class);
+		Man man=ctx.getBean("man", Man.class);
 		man.show();
 		Duck d01=ctx.getBean("d1", Duck.class);
 		d01.showFly();

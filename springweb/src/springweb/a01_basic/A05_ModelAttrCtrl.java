@@ -1,6 +1,6 @@
 package springweb.a01_basic;
 
-import java.util.ArrayList; 
+import java.util.ArrayList;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -28,6 +28,9 @@ public class A02_QuebankCtrl {
 	@RequestMapping(params="method=insProc")
 	public String insert(Quebank ins){
 		System.out.println("입력문제:"+ins.getQue());
+		
+		
+		
 		service.insertQuebank(ins);
 		// 입력처리가 끝나면 조회 controller를 호출하라!!
 		return "redirect:/questbank.do?method=list";
