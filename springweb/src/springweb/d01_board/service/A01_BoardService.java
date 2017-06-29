@@ -1,9 +1,10 @@
 package springweb.d01_board.service;
 
-import java.util.ArrayList; 
+import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import springweb.d01_board.repository.A01_BoardDao;
 import springweb.d01_board.vo.Board;
 import springweb.d01_board.vo.Board_Sch;
@@ -17,47 +18,52 @@ public class A01_BoardService {
 		dao.insertBoard(ins);
 	}
 	public ArrayList<Board> listBoard(Board_Sch sch){
+//		ÃÑµ¥ÀÌÅÍ °Ç¼ö.(DB¿¡¼­ ·Îµù)
+		sch.setCount(dao.totCnt(sch));
+//		ÇÑ ÆäÀÌÁö¿¡¼­ ³ªÅ¸³¯ µ¥ÀÌÅÍ °Ç¼ö..
+//		ÃÊ±â 0 ==> 5
+		if(sch.getPageSize() == 0){
+			sch.setPageSize(5);
+		}
+//		ÃÑ ÆäÀÌÁö¼ö [1][2][3]  ÃÑµ¥ÀÌÅÍ°Ç¼ö/ÆäÀÌÁö°¡ ³ªÅ¸³¯ µ¥ÀÌÅÍ °Ç¼ö
+//		20 ---> 4page  23 --> 5page·Î Ã³¸®¸¦ À§ÇØ ¿Ã¸² Ã³¸®..
+		sch.setPageCount((int)Math.ceil(sch.getCount()/(double)sch.getPageSize()));
+//		ÇöÀç Å¬¸¯ÇÑ page ¹øÈ£..
+//		ÃÊ±â 0 ==> 1
+		if(sch.getCurPage()==0){
+			sch.setCurPage(1);
+		}
+//		½ÃÀÛ¹øÈ£ : ÇöÀçÆäÀÌÁö-1 * ÆäÀÌÁöÅ©±â +1
+		sch.setStart((sch.getCurPage()-1)*sch.getPageSize()+1);
+//		¸¶Áö¸·¹øÈ£
+		sch.setEnd(sch.getCurPage()*sch.getPageSize());
+		
 		return dao.listBoard(sch);
 	}	
 	public Board getBoard(int no){
 		return dao.getBoard(no);
 	} 
-	// ï¿½ï¿½È­ï¿½ï¿½ È£ï¿½ï¿½ï¿½, ï¿½ï¿½È¸ï¿½ï¿½ï¿½ï¿½ update,
-	//  ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½.
+	// »ó¼¼È­¸é È£Ãâ½Ã, Á¶È¸¼ö¸¦ update,
+	//  ÇÏ³ªÀÇ µ¥ÀÌÅÍ¸¦ °¡Á®¿À´Â Ã³¸®.
 	public Board detailBoard(int no){
-		// readCountï¿½ï¿½ update Ã³ï¿½ï¿½..
+		// readCount¸¦ update Ã³¸®..
 		dao.uptBoardCnt(no);
 		
-		// ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îºï¿½
+		// ÇÏ³ªÀÇ µ¥ÀÌÅÍ¸¦ °¡Á®¿Ã ºÎºÐ
 		return getBoard(no);
 	}
 	
 	public Board getReBoard(int no){
-		Board reboard = dao.getBoard(no);
-		reboard.setRefno(no);
-		reboard.setSubject("RE:"+reboard.getSubject());
-		reboard.setContent("\n\n\n\n=======\n"
-						+reboard.getContent());
-		Board reboard=null;
-		// ï¿½Ê±ï¿½ ï¿½ï¿½ï¿½ È­ï¿½ï¿½
-		if(no==0){
-			reboard = new Board();
-		// ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ È­ï¿½ï¿½
-		}else{
-			reboard = dao.getBoard(no);
-			// ï¿½ï¿½Û¿ï¿½ refnoï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ noï¿½ï¿½ï¿½ï¿½ ï¿½Ò´ï¿½ï¿½Ï¿ï¿½,
-			// ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ï½ï¿½, refnoï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Öµï¿½ï¿½ï¿½ Ã³ï¿½ï¿½..
+		Board reboard= dao.getBoard(no);
+			// ´ä±Û¿¡ refno°ªÀ¸·Î ±âÁ¸±ÛÀÇ no°ªÀ» ÇÒ´çÇÏ¿©,
+			// ´ä±ÛÀ» µî·Ï½Ã, refno¿¡ °ªÀÌ ÀÖµµ·Ï Ã³¸®..
 			reboard.setRefno(no);
 			reboard.setSubject("RE:"+reboard.getSubject());
-			reboard.setContent("\n\n\n\n====ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½===\n"
+			reboard.setContent("\n\n\n\n====ÀÌÀü³»¿ë===\n"
 							+reboard.getContent());
-		}
->>>>>>> .r507
+	
 		return reboard;
 	} 	
-	public Board detailBoard(int no){
-		return dao.detailBoard(no);
-	}
 	
 	
 }

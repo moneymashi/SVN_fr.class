@@ -14,9 +14,8 @@
 		insert into QUEBANK values(QUEBANK_SEQ.nextval, 
 			#{que},#{coransw},#{queType} )			
 	</insert>
-	<!-- 
-	#{que},#{coransw},#{queType} 
-	getQue(), getCoransw(), getQueType() -->
+
+
 	<select id="list" resultMap="quebankResult"
 		 parameterType="quebank">
 		 select * from quebank

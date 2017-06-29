@@ -13,6 +13,7 @@
 		<typeAlias alias="board" type="springweb.d01_board.vo.Board"/>
 		<typeAlias alias="schboard" type="springweb.d01_board.vo.Board_Sch"/>
 		<typeAlias alias="quebank" type="springweb.d01_board.vo.Quebank"/>
+		<typeAlias alias="calendar" type="springweb.i02_calen.Calendar"/>
 		
 	</typeAliases>
 	<mappers>
@@ -21,6 +22,7 @@
 		<mapper resource="resource/DeptMapper.xml"/>
 		<mapper resource="resource/BoardMapper.xml"/>
 		<mapper resource="resource/QuebankMapper.xml"/>
+		<mapper resource="resource/CalendarMapper.xml"/>
 		<!--  -->
 	</mappers>
 </configuration>

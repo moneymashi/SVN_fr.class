@@ -16,6 +16,9 @@
 			$(document).ready(function(){
 				
 			})
+			function download(fname){
+				$(location).attr("href","down.do?fname="+fname);
+			}
 		</script>
 	</head>
 	<body>
@@ -25,6 +28,7 @@
 			파일 첨부:<input type="file" name="report"/><br>
 			<input type="submit" value="업로드"/>
 		</form>
+		<a href="javascript:download('${fname}');">${fname}</a>
 		
 
 	</body>

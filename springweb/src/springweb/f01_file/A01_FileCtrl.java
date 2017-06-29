@@ -1,11 +1,11 @@
 package springweb.f01_file;
 
-import java.io.File; 
+import java.io.File;
 import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,17 +21,18 @@ public class A01_FileCtrl {
 	}
 	@RequestMapping(method=RequestMethod.POST)
 	public String upload(@RequestParam("report") 
-			MultipartFile report){
-		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½:"
+			MultipartFile report, Model d){
+		System.out.println("¼­¹ö¿¡ ¿ÂÆÄÀÏ ÀÌ¸§:"
 				+report.getOriginalFilename());	
-		// service ï¿½ï¿½ Ã³ï¿½ï¿½..
+		// service ´Ü Ã³¸®..
 		uploadProc(report);
+		d.addAttribute("fname", report.getOriginalFilename());
 		
 		return "f01_file/a01_uploadForm";
 	}
 	// <input name="fname" />
 	// <input name="report" />
-	// ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Ñ°Ü¿ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ serverï¿½ï¿½ Æ¯ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	// ÆÄÀÏÀÌ¸§°ú ³Ñ°Ü¿Â ½ºÆ®¸²ÇüÅÂÀÇ °´Ã¼¸¦ server¿¡ Æ¯Á¤ÇÑ À§Ä¡¿¡ ÀúÀå
 //	@Value("#{props['upload']}")
 
 	
@@ -43,10 +44,10 @@ public class A01_FileCtrl {
 		
 //		path01="C:/a01_prog/eclipse/workspace_server"
 //				+ "/springweb/WebContent/z02_upload/";
-		// ï¿½Ø´ï¿½ ï¿½ï¿½Î·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò´ï¿½Ã³ï¿½ï¿½..
+		// ÇØ´ç °æ·Î·Î ÆÄÀÏÀ» ÇÒ´çÃ³¸®..
 		String file01 = path01+name;
 		File f1 = new File(file01);
-		// ioï¿½ï¿½ exception Ã³ï¿½ï¿½ ï¿½Ê¿ï¿½
+		// io·Î exception Ã³¸® ÇÊ¿ä
 		try {
 			report.transferTo(f1);
 		} catch (IllegalStateException e) {

@@ -15,19 +15,19 @@ import springweb.z01_dto.Schedule;
 
 @Controller
 @RequestMapping("/boardList.do")
-@SessionAttributes("empsch")
+@SessionAttributes("boardSch")
 public class A01_BoardCtrl {
 	
 	@Autowired(required=false)
 	private A01_BoardService service;
-	@ModelAttribute("empsch")
+	@ModelAttribute("boardSch")
 	public Board_Sch Board_Sch(){
 		return new Board_Sch();
 	}	
 	// °Ô½ÃÆÇ list
 	// http://localhost:6080/springweb/boardList.do?method=list
 	@RequestMapping(params="method=list")
-	public String start(@ModelAttribute("empsch") Board_Sch sch,
+	public String start(@ModelAttribute("boardSch") Board_Sch sch,
 							Model d){
 //		if(sch.getSubject()!=null){
 //			sch.setSubject(sch.getSubject()+"@");

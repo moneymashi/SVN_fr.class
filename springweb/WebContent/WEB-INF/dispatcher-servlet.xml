@@ -60,7 +60,7 @@ pass=tiger
     -->  
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
     	<property name="basePackage" 
-    		value="springweb.c01_database.repository,springweb.d01_board.repository"/>
+    		value="springweb.c01_database.repository,springweb.d01_board.repository,springweb.i02_calen"/>
     		
     </bean>
      <!-- 여러개의 ViewResolver 처리를 위해 bean이름 으로 선언 Resolver를 우선 순위로 처리-->
@@ -101,7 +101,8 @@ pass=tiger
   		class="org.springframework.web.servlet.view.json.MappingJacksonJsonView">
 		<property name="contentType" value="text/html;charset=UTF-8"/>	  		
   	</bean> 
-         
+	<!-- 파일 다운로드 모듈 View-->
+	<bean id="download" class="springweb.f01_file.B01_DownloadView"/>         
 </beans>
 
 
