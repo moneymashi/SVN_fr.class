@@ -29,6 +29,24 @@
 		<script src='${path}/i01_calen/fullcalendar.min.js'></script>		
 
 		<script type="text/javascript">
+		Date.prototype.toFormatString = function(format) {
+			 var year = this.getFullYear();
+			 var month = this.getMonth() + 1;
+			 var day = this.getDate();
+			 var hour = this.getHours();
+			 var minute = this.getMinutes();
+			 var second = this.getSeconds();
+			 if (format == null) format = "yyyy-MM-dd";
+			 format = format.replace("yyyy", year);
+			 format = (month < 10) ? format.replace("MM", "0" + month) : format.replace("MM", month);
+			 format = format.replace("M", month);
+			 format = (day < 10) ? format.replace("dd", "0" + day) : format.replace("dd", day);
+			 format = format.replace("d", day);
+			 format = (hour < 10) ? format.replace("HH", "0" + hour) : format.replace("HH", hour);
+			 format = (minute < 10) ? format.replace("mm", "0" + minute) : format.replace("mm", minute);
+			 format = (second < 10) ? format.replace("ss", "0" + second) : format.replace("ss", second);
+			 return format;
+		}		
 			var dteinfo;
 			$(document).ready(function(){
 				$.ajax({
@@ -53,9 +71,18 @@
 					selectable: true,
 					selectHelper: true,
 					select: function(start, end) {
-						var title = prompt('Event Title:');
+						var title = prompt('제목 등록하세요!!:');
+						//alert(start+":"+end);
+						var d1=new Date(start);
+						d1.setHours(d1.getHours()-9);
+						var d2=new Date(end);
+						d2.setHours(d2.getHours()-9);
+						//alert(d1.toFormatString("yyyy-MM-ddTHH:mm:ss"));
+						//alert(d2.toFormatString("yyyy-MM-ddTHH:mm:ss"));
 						var eventData;
 						if (title) {
+							insert(d1.toFormatString("yyyy-MM-ddTHH:mm:ss"),
+									d2.toFormatString("yyyy-MM-ddTHH:mm:ss"),title,"");							
 							eventData = {
 								title: title,
 								start: start,
@@ -73,7 +100,21 @@
 				
 				
 			}		
-
+			function insert(start,end,title,url){
+				var sndDate="start="+start+"&end="+end+"&title="+title+"&url="+url;
+				//alert(sndDate);
+				$.ajax({
+					type:"POST",
+					url:"calendar.do?method=insert",
+					data:sndDate,
+					dataType:"json",
+					success:function(data){
+						//alert(data.list.length);
+						dteinfo=data.list;
+						loadView();
+					}
+				});		
+			}
 
 		</script>
 	</head>

@@ -11,4 +11,7 @@
 	<select id="list" resultMap="calenRsMap">
 		select * from calendar
 	</select>
+	<insert id="insert" parameterType="calendar">
+		insert into calendar values( seq_calendar.nextval, #{title},#{start},#{end},#{url} )
+	</insert>		
 </mapper>

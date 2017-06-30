@@ -25,5 +25,15 @@ public class A01_CalenCtrl {
 		mav.addObject("list", service.list());
 		return mav;
 	}
-
+	@RequestMapping(params="method=insert")
+	public String jsonInsert(Calendar insert){
+		System.out.println("µî·Ï!!!");
+		System.out.println(insert.getStart());
+		System.out.println(insert.getEnd());
+		System.out.println(insert.getTitle());
+		if(insert.getUrl()==null)
+			insert.setUrl("");
+		service.insert(insert);
+		return "redirect:/calendar.do?method=list";
+	}	
 }

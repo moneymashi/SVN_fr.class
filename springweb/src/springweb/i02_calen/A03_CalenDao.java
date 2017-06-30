@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface A03_CalenDao {
 	public ArrayList<Calendar> list();
+	public void insert(Calendar insert);	
 }

@@ -13,5 +13,7 @@ public class A02_CalenSrv {
 	public ArrayList<Calendar> list(){
 		return dao.list();
 	}	
-
+	public void insert(Calendar insert){
+		dao.insert(insert);
+	}	
 }
