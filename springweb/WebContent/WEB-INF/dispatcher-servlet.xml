@@ -2,18 +2,25 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:aop="http://www.springframework.org/schema/aop" 
 	xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	 xmlns:util="http://www.springframework.org/schema/util"
+	 xmlns:websocket="http://www.springframework.org/schema/websocket"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
         http://www.springframework.org/schema/aop
        http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context-4.0.xsd
+  		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd     
         http://www.springframework.org/schema/util
-       http://www.springframework.org/schema/util/spring-util-4.0.xsd" >
- 
+       http://www.springframework.org/schema/util/spring-util-4.0.xsd
+   		http://www.springframework.org/schema/websocket
+		http://www.springframework.org/schema/websocket/spring-websocket.xsd    
+       " >
+ <aop:aspectj-autoproxy />
     <!-- 컨테이너에 filter 조건으로 해당 정의된 클래스들을 자동 객체 등록 처리 
     	context:conponent-scan
     		1) base-package : 대상 패키지 선언
@@ -21,11 +28,22 @@
     			1) type : filter 대상에 대한 type ex) annotation,regex
     			2) expression : 실제 쓰이는 클래스  ex) Controller, Service, Repository
     -->
- 	<context:component-scan base-package="."  >
+ 	<context:component-scan base-package="springweb"  >
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>   
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>   
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>   
      </context:component-scan>
+  	<bean id="annotationUrlMapping" 
+	class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+	<bean id="controllerClassNameHandlerMapping" 
+	class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping" />
+	<bean id="annotationMethodHandlerAdapter" 
+	class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />   
+	<websocket:handlers>
+		<websocket:mapping handler="chatHandler" path="/chat-ws.do"/>
+	</websocket:handlers>
+	 <mvc:default-servlet-handler />	
+	      
      <context:property-placeholder location="classpath:/resource/properties/info01"/>   
      
     <!-- DB연결 lib 추가 후..--> 
@@ -103,6 +121,8 @@ pass=tiger
   	</bean> 
 	<!-- 파일 다운로드 모듈 View-->
 	<bean id="download" class="springweb.f01_file.B01_DownloadView"/>         
+
+	
 </beans>
 
 
