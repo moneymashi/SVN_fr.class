@@ -109,8 +109,7 @@ public class Intro0710_Rstudio {
  * ##### 코딩변경 확인예제
  * gender를 역코딩으로 regender로 새로운변수만들고 처리.-역코딩순서에 맞게 처리.
  * >table(dataset01$gender)
- * dataset02<-subset(dataset01,
- * dataset01$gender==1| dataset01$gender ==2)
+ * dataset02<-subset(dataset01, dataset01$gender==1| dataset01$gender ==2)
  * genMax <- max(datset02$gender)
  * genMin <- min(dataset02$gender)
  * stanGen <- genMax - genMin
@@ -124,7 +123,7 @@ public class Intro0710_Rstudio {
  * 
  * 시각화 처리 프로세스
  *  명목척도 - 비연속적 데이터
- *   resident2 : 아래코드-- goekdzhemdp akwrp answkdufqusrud
+ *   resident2 : 아래코드--해당코드에 맞게 문자열변경
  *   resident : 5시구군, 4.대구, 3.대전, 2.인천, 1서울
  *   gender2: gender기준으로 남, 여 변환
  *   table()통해서 데이터 빈도수체크. 
@@ -140,10 +139,11 @@ public class Intro0710_Rstudio {
  *   	사칙연산자, 테이블의 조인을 통해 추가.
  *  사칙연산자: 변수간의 데이터의 연산처리를 통해서 새로운 변수를 생성, 활용
  *  데이터 조인: 기존 데이터의 key와 연관관계가 있는 다른데이터셋과 조인으로 추가적인 변수생성
- *  ex) 곡객정보user_id로 매칠되어있는 지불정보 pay_data, 반품정보return_data
+ *  ex) 고객정보user_id로 매칠되어있는 지불정보 pay_data, 반품정보return_data
  * 
  * 
  * 전처리 프로세스 - join.
+ * library(plyr)
  * join <- join(user_data, pay_data, by = 'user_id')  
  * ## join<- merge(user_data, pay_data, id = 'user_id')
  * ##### join에는 by를 merge에는 id를 사용한다!!!!
