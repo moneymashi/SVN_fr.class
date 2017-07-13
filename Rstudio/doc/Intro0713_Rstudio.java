@@ -6,7 +6,7 @@ public class Intro0713_Rstudio {
  * tplot<- update(tplot, main = 'something new title' )
  * tplot
  * 
- * 
+ * ss
  * quakes를 기준으로 mag, stations 를 x,y로 xyplot처리하며 조건으로 depthzone을 4구간으로 나눈다. 레이아웃은 2,2로 설정
  * z <- function(zoneN){
    quakes$depth >= min(quakes$depth)+ zone*(zoneN-1) &quakes$depth < min(quakes$depth)+zone*zoneN
