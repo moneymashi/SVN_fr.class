@@ -9,6 +9,9 @@ Created on 2017. 7. 31.
     .fillna("결측치NaN발생시, 대체할 문자열")
 3. 데이터 프레임간 연결    
     pd.concat([프레임1, 프레임2], axis=1)
+4. join을 통한 데이터 처리..
+    inner : 공통 부분처리..
+    
 '''
 from pandas import Series, DataFrame
 import numpy as np
@@ -27,6 +30,14 @@ df2 = pd.DataFrame(stock2, columns=["2017-08-01","2017-08-02"],
 #3. concat()를 이용한 데이터 연결 2차원  axis=1
 #   NaN에 대한 처리--> fillna("-")
 print("최종 결과 처리(프레임+프레임)\n",pd.concat([df1,df2], axis=1).fillna('-'))
+print("최종 결과 처리(join-inner)\n",pd.concat([df1,df2], axis=1, join="inner"))
+#4. join_axes=[지정된 index] 해당 인덱스로 join 처리..
+print("최종 결과 처리(join_axes)-df1.index\n",
+        pd.concat([df1,df2], axis=1, join_axes=[df1.index]).fillna("-"))
+print("최종 결과 처리(join_axes)-df2.index\n",
+        pd.concat([df1,df2], axis=1, join_axes=[df2.index]))
+
+
 
 
 
