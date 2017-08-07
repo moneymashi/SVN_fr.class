@@ -1,21 +1,22 @@
 '''
 Created on 2017. 7. 31.
 
-@author: acorn
+@author: kitcoop
+
+웹에서 데이터 로딩 방식..(get)
+1. params01 ={'param1':'value1', 'param2','value2'}
+2. res = requests.get( URL, params=params01 )
+        http://localhost:8080/web?param1=value1&param2=value2
+
 '''
-"""
-
-"""
-
+from pandas import Series, DataFrame
+import numpy as np
+import pandas as pd
 import requests
 
-url = 'http://www.naver.com'
-# url = 'http://localhost:6080/springweb/start.do'  ## localhost도 가능하다는걸 보여주기만..
+##url = "http://www.naver.com"
+url = "http://localhost:6080/springweb/start.do"
 data = requests.get(url)
 print(data)
 print(data.text)
-
-file = open('data_text.txt','w',encoding = 'utf-8')
-file.write(''.join(data.text))
-file.writelines(data.text)
 

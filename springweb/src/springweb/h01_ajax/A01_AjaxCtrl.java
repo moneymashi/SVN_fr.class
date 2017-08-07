@@ -1,6 +1,6 @@
 package springweb.h01_ajax;
 
-import org.springframework.beans.factory.annotation.Autowired; 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -21,8 +21,8 @@ public class A01_AjaxCtrl {
 	@RequestMapping(params="method=jsonList")
 	public ModelAndView jsonList(Emp sch){
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("pageJsonReport");// ï¿½ï¿½ï¿½ï¿½ï¿½â¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ json viewer
-		mav.addObject("emplist", service.empList(sch));// viewï¿½ï¿½
+		mav.setViewName("pageJsonReport");// Á¶¸³±â¿¡ ¼±¾ðÇÑ json viewer
+		mav.addObject("emplist", service.empList(sch));// view´Ü
 		
 		return mav;
 	}
